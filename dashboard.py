@@ -54,7 +54,6 @@ CATEGORICAL = ["#3987e5", "#d95926", "#199e70"] if DARK else ["#2a78d6", "#eb683
 STATUS_GOOD = "#3fae63" if DARK else "#157f3d"
 STATUS_WARNING = "#d99527" if DARK else "#b45309"
 STATUS_CRITICAL = "#e06a5e" if DARK else "#b42318"
-SEQUENTIAL_BLUES = ["#104281", "#1c5cab", "#3987e5", "#86b6ef"] if DARK else ["#cde2fb", "#6da7ec", "#256abf", "#0d366b"]
 
 INK = "#ecefef" if DARK else "#14181a"
 INK_2 = "#a3adb1" if DARK else "#5a6468"
@@ -253,46 +252,6 @@ def training_phase(days_to_go):
     return "Base"
 
 
-def compute_readiness(daily: pd.DataFrame):
-    """Rule-based good/warning/critical read combining HRV status, RHR trend,
-    and sleep vs rolling average. Heuristic, not medical advice."""
-    if daily.empty:
-        return None
-    latest = daily.iloc[-1]
-    score, reasons = 0, []
-
-    hrv_status = latest.get("hrv.status")
-    if hrv_status == "BALANCED":
-        score += 1
-    elif hrv_status in ("UNBALANCED", "LOW"):
-        score -= 1
-        reasons.append(f"HRV status: {hrv_status}")
-
-    if "rhr.avg_7day" in daily.columns:
-        rhr_series = daily["rhr.avg_7day"].dropna()
-        if len(rhr_series) >= 8:
-            recent_rhr, prior_rhr = rhr_series.iloc[-1], rhr_series.iloc[-8]
-            if recent_rhr > prior_rhr + 2:
-                score -= 1
-                reasons.append("resting HR trending up")
-            elif recent_rhr < prior_rhr - 1:
-                score += 1
-
-    sleep_last, sleep_avg = latest.get("sleep.duration_hours"), latest.get("sleep.avg_7day_duration_hours")
-    if pd.notna(sleep_last) and pd.notna(sleep_avg):
-        if sleep_last < sleep_avg - 1:
-            score -= 1
-            reasons.append("slept below your recent average")
-        elif sleep_last >= sleep_avg:
-            score += 1
-
-    if score >= 1:
-        return "good", "Ready to train", reasons
-    if score <= -2:
-        return "critical", "Signs of fatigue — consider an easy day", reasons
-    return "warning", "Mixed signals — listen to your body", reasons
-
-
 def compute_streak(weekly_counts: pd.Series, target: int) -> int:
     complete_weeks = weekly_counts.iloc[:-1] if len(weekly_counts) > 0 else weekly_counts
     streak = 0
@@ -302,19 +261,6 @@ def compute_streak(weekly_counts: pd.Series, target: int) -> int:
         else:
             break
     return streak
-
-
-def build_calendar_df(acts: pd.DataFrame, weeks: int = 13) -> pd.DataFrame:
-    end = acts["date"].max().normalize()
-    start = (end - pd.Timedelta(weeks=weeks - 1)).normalize()
-    start = start - pd.Timedelta(days=start.weekday())
-    all_days = pd.date_range(start=start, end=end, freq="D")
-    daily_km = acts.groupby(acts["date"].dt.normalize())["distance_km"].sum()
-    cal = pd.DataFrame({"date": all_days})
-    cal["distance_km"] = cal["date"].map(daily_km).fillna(0)
-    cal["week"] = cal["date"] - pd.to_timedelta(cal["date"].dt.weekday, unit="D")
-    cal["weekday"] = cal["date"].dt.strftime("%a")
-    return cal
 
 
 def chip(key, value_html, status_html, sev=None):
@@ -334,13 +280,20 @@ def info_popover(body_markdown: str, label: str = "ℹ️"):
 def crosshair_chart(long_df, y_title=None, colors=None, zero_line=False):
     """A themed multi-series line chart with a crosshair + hover tooltip
     (nearest-point rule, standard Vega-Lite pattern) -- expects columns
-    date/Series/value. Returns None if there's no data to show."""
+    date/Series/value. Returns None if there's no data to show.
+
+    The tooltip is built from a date-pivoted (wide) copy of the data so a
+    single hover shows every series' value at that date together, not just
+    whichever one row happens to be nearest."""
     if long_df is None or long_df.empty:
         return None
     series = sorted(long_df["Series"].unique().tolist())
     palette = colors or CATEGORICAL
 
+    pivot_df = long_df.pivot_table(index="date", columns="Series", values="value", aggfunc="first").reset_index()
+
     base = alt.Chart(long_df)
+    pivot_base = alt.Chart(pivot_df)
     nearest = alt.selection_point(nearest=True, on="pointerover", fields=["date"], empty=False)
 
     color_enc = alt.Color("Series:N", title=None, scale=alt.Scale(domain=series, range=palette[:len(series)])) \
@@ -351,10 +304,13 @@ def crosshair_chart(long_df, y_title=None, colors=None, zero_line=False):
         layers.append(alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(color=RULE_STRONG, strokeDash=[3, 3]).encode(y="y:Q"))
 
     line = base.mark_line(point=False).encode(x=alt.X("date:T", title=None), y=alt.Y("value:Q", title=y_title), color=color_enc)
-    selectors = base.mark_point(opacity=0).encode(x="date:T").add_params(nearest)
+    selectors = pivot_base.mark_point(opacity=0).encode(x="date:T").add_params(nearest)
     points = line.mark_point(size=45).encode(opacity=alt.condition(nearest, alt.value(1), alt.value(0)))
-    tooltip = [alt.Tooltip("date:T", title="Date")] + ([alt.Tooltip("Series:N")] if len(series) > 1 else []) + [alt.Tooltip("value:Q", format=".2f")]
-    rule = base.mark_rule(color=RULE_STRONG).encode(
+
+    tooltip = [alt.Tooltip(field="date", type="temporal", title="Date")] + [
+        alt.Tooltip(field=s, type="quantitative", title=s, format=".2f") for s in series
+    ]
+    rule = pivot_base.mark_rule(color=RULE_STRONG).encode(
         x="date:T", opacity=alt.condition(nearest, alt.value(0.5), alt.value(0)), tooltip=tooltip
     ).add_params(nearest)
 
@@ -423,7 +379,7 @@ def render_acwr(ctx):
     sev = A.classify_acwr(latest)
     label = {"good": "in the sweet spot", "warning": "outside the sweet spot", "critical": "high injury-risk zone"}.get(sev, "")
     getattr(st, {"good": "success", "warning": "warning", "critical": "error"}.get(sev, "info"))(
-        f"Current ratio {latest:.2f} — {label}.", icon={"good": "✅", "warning": "⚠️", "critical": "🔴"}.get(sev, "ℹ️")
+        f"Current ratio {latest:.2f} — {label}."
     )
 
 
@@ -463,7 +419,8 @@ def render_monthly_mileage(ctx):
     monthly_df["month_label"] = monthly_df["month_period"].astype(str)
     chart = (
         alt.Chart(monthly_df).mark_bar(color=CATEGORICAL[1], cornerRadiusTopLeft=3, cornerRadiusTopRight=3)
-        .encode(x=alt.X("month:T", title="Month"), y=alt.Y("distance_km:Q", title="km"),
+        .encode(x=alt.X("month:T", title="Month", axis=alt.Axis(format="%b %Y", tickCount={"interval": "month", "step": 1})),
+                y=alt.Y("distance_km:Q", title="km"),
                 tooltip=[alt.Tooltip("month_label:N", title="Month"), alt.Tooltip("distance_km:Q", title="km", format=".1f")])
     )
     st.altair_chart(chart, width="stretch")
@@ -540,26 +497,35 @@ def render_race_predictor_short(ctx):
         st.caption("No race predictor data yet.")
 
 
-@section("own_predictor", "Fitness", "Your Model vs. Garmin")
+@section("own_predictor", "Fitness", "Race Predictor Comparison")
 def render_own_predictor(ctx):
-    st.subheader("Your Model vs. Garmin")
+    st.subheader("Race Predictor Comparison")
     info_popover(
-        "Riegel's formula (T₂ = T₁ × (D₂/D₁)^1.06) fitted to your own best-known effort, shown "
-        "next to Garmin's own estimate. Garmin leans on VO2max-derived potential; this leans on what "
-        "you've actually run. Where they disagree is the interesting part."
+        "**Riegel** (T₂ = T₁ × (D₂/D₁)^1.06) and **Cameron** (a different, non-constant-exponent curve "
+        "fitted to elite performances) both extrapolate from your own best-known effort. **Daniels/Gilbert "
+        "VDOT** instead uses Garmin's own estimated VO2max as its input — a genuinely different signal "
+        "(measured aerobic capacity vs. actual race-effort pace). Garmin's own column leans on a "
+        "proprietary blend. Where they agree is reassuring; where they don't is the interesting part."
     )
-    own = ctx["own_predictions"]
+    riegel, cameron, daniels = ctx["riegel_predictions"], ctx["cameron_predictions"], ctx["daniels_predictions"]
     daily = ctx["daily"]
+    distance_order = ["5k", "10k", "half", "marathon"]
+    distance_names = {"5k": "5 km", "10k": "10 km", "half": "Half Marathon", "marathon": "Marathon"}
     garmin_cols = {"5k": "race_predictions.time_5k_sec", "10k": "race_predictions.time_10k_sec",
                    "half": "race_predictions.time_half_sec", "marathon": "race_predictions.time_marathon_sec"}
     latest = daily.iloc[-1] if not daily.empty else {}
     rows = []
-    for label, col in garmin_cols.items():
-        garmin_val = latest.get(col) if isinstance(latest, pd.Series) else None
-        rows.append({"Distance": BEST_EFFORT_LABELS.get(label, label.title()) if label in BEST_EFFORT_LABELS else label.title(),
-                      "Garmin": format_duration(garmin_val), "Your model": format_duration(own.get(label))})
-    if not own and all(pd.isna(r["Garmin"]) or r["Garmin"] == "--" for r in rows):
-        st.caption("Not enough data yet — need at least one recorded best effort and/or Garmin prediction.")
+    for label in distance_order:
+        garmin_val = latest.get(garmin_cols[label]) if isinstance(latest, pd.Series) else None
+        rows.append({
+            "Distance": distance_names[label],
+            "Garmin": format_duration(garmin_val),
+            "Riegel": format_duration(riegel.get(label)),
+            "Cameron": format_duration(cameron.get(label)),
+            "Daniels/VDOT": format_duration(daniels.get(label)),
+        })
+    if not riegel and not cameron and not daniels and all(r["Garmin"] == "--" for r in rows):
+        st.caption("Not enough data yet — need at least one recorded best effort, a VO2max reading, and/or a Garmin prediction.")
         return
     st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch")
 
@@ -703,33 +669,37 @@ def render_stress(ctx):
         st.caption("No stress data yet.")
 
 
-@section("body_battery", "Recovery", "Body Battery")
-def render_body_battery(ctx):
-    st.subheader("Body Battery")
-    chart = crosshair_chart(melt_for_chart(ctx["daily"], {"body_battery.end_level": "End-of-day level"}), y_title="level")
-    if chart is not None:
-        st.altair_chart(chart, width="stretch")
-    else:
-        st.caption("No body battery data yet.")
-
-
 @section("polarization", "Recovery", "Training Polarization")
 def render_polarization(ctx):
     st.subheader("Training Polarization")
     info_popover(
         "The 80/20 rule: roughly four-fifths of training time should be genuinely easy (Z1–2), with "
-        "hard efforts (Z4–5) deliberately rare. Computed from time-in-HR-zone across your enriched runs."
+        "hard efforts (Z4–5) deliberately rare. Computed per week from time-in-HR-zone across your "
+        "enriched runs."
     )
-    pol = ctx["polarization"]
-    if not pol:
+    weekly_pol = ctx["weekly_polarization"]
+    if weekly_pol.empty:
         st.caption("No HR-zone data yet.")
         return
-    cols = st.columns(3)
-    cols[0].metric("Easy (Z1–2)", f"{pol['easy_pct']:.0f}%")
-    cols[1].metric("Moderate (Z3)", f"{pol['moderate_pct']:.0f}%")
-    cols[2].metric("Hard (Z4–5)", f"{pol['hard_pct']:.0f}%")
-    if pol["easy_pct"] < 75:
-        st.caption(f"You're at {pol['easy_pct']:.0f}% easy, below the ~80% target — a common sign of running easy days too hard.")
+
+    long_df = weekly_pol.melt(id_vars="week", value_vars=["easy_pct", "moderate_pct", "hard_pct"], var_name="Zone", value_name="pct")
+    zone_labels = {"easy_pct": "Easy (Z1–2)", "moderate_pct": "Moderate (Z3)", "hard_pct": "Hard (Z4–5)"}
+    long_df["Zone"] = long_df["Zone"].map(zone_labels)
+    zone_order = ["Easy (Z1–2)", "Moderate (Z3)", "Hard (Z4–5)"]
+    zone_colors = [CATEGORICAL[0], STATUS_WARNING, STATUS_CRITICAL]
+
+    bars = alt.Chart(long_df).mark_bar().encode(
+        x=alt.X("week:T", title="Week"),
+        y=alt.Y("pct:Q", title="% of time", stack="zero"),
+        color=alt.Color("Zone:N", title=None, scale=alt.Scale(domain=zone_order, range=zone_colors)),
+        tooltip=[alt.Tooltip("week:T", title="Week"), alt.Tooltip("Zone:N"), alt.Tooltip("pct:Q", title="%", format=".0f")],
+    )
+    target_rule = alt.Chart(pd.DataFrame({"y": [80]})).mark_rule(strokeDash=[4, 3], color=INK).encode(y="y:Q")
+    st.altair_chart((bars + target_rule).properties(height=280), width="stretch")
+
+    latest_easy = weekly_pol["easy_pct"].iloc[-1]
+    st.caption(f"This week: {latest_easy:.0f}% easy. Dashed line marks the ~80% target." +
+               (" Below target is a common sign of running easy days too hard." if latest_easy < 75 else ""))
 
 
 # --------------------------------------------------------------------------
@@ -775,26 +745,6 @@ def render_pace_hr_scatter(ctx):
     st.altair_chart(scatter_chart, width="stretch")
 
 
-@section("calendar_heatmap", "Runs", "Run Consistency Calendar")
-def render_calendar_heatmap(ctx):
-    acts = ctx["acts"]
-    st.subheader("Run Consistency Calendar")
-    if acts.empty:
-        st.caption("No activities yet.")
-        return
-    cal_df = build_calendar_df(acts, weeks=13)
-    weekday_order = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-    heatmap = (
-        alt.Chart(cal_df).mark_rect(cornerRadius=2).encode(
-            x=alt.X("week:T", title=None, axis=alt.Axis(format="%b %d")),
-            y=alt.Y("weekday:O", sort=weekday_order, title=None),
-            color=alt.Color("distance_km:Q", title="km", scale=alt.Scale(range=SEQUENTIAL_BLUES)),
-            tooltip=[alt.Tooltip("date:T", title="Date"), alt.Tooltip("distance_km:Q", title="km", format=".1f")],
-        )
-    )
-    st.altair_chart(heatmap, width="stretch")
-
-
 # --------------------------------------------------------------------------
 # Sidebar
 # --------------------------------------------------------------------------
@@ -811,11 +761,11 @@ if race_date != race_date_val:
 goal_input = st.sidebar.text_input("Goal time (H:MM:SS)", value=seconds_to_hms(config.get("goal_marathon_time_sec")), placeholder="3:30:00")
 goal_marathon_sec = parse_hms(goal_input) if goal_input else None
 if goal_input and goal_marathon_sec is None:
-    st.sidebar.caption("⚠️ Couldn't parse that as H:MM:SS")
+    st.sidebar.caption("Couldn't parse that as H:MM:SS")
 elif goal_marathon_sec != config.get("goal_marathon_time_sec"):
     set_config_value(config, "goal_marathon_time_sec", goal_marathon_sec)
 
-with st.sidebar.expander("⚙️ Settings"):
+with st.sidebar.expander("Settings"):
     weekly_run_target = st.number_input("Weekly run target", min_value=1, max_value=14, value=config.get("weekly_run_target", DEFAULT_WEEKLY_RUN_TARGET))
     set_config_value(config, "weekly_run_target", weekly_run_target)
 
@@ -849,7 +799,7 @@ with st.sidebar.expander("⚙️ Settings"):
 raw = load_data_raw()
 last_sync_date = (raw.get("meta", {}).get("last_sync") or "")[:10]
 needs_sync = last_sync_date != date.today().isoformat()
-force_sync = st.sidebar.button("🔄 Sync now")
+force_sync = st.sidebar.button("Sync now")
 
 if needs_sync or force_sync:
     with st.spinner("Syncing with Garmin Connect..."):
@@ -861,7 +811,7 @@ if raw.get("meta", {}).get("last_sync"):
 daily, acts = load_frames(raw)
 
 if daily.empty and acts.empty:
-    st.title("🏃 Running Dashboard")
+    st.title("Running Dashboard")
     st.info("No data yet. Click **Sync now** in the sidebar to pull your first batch from Garmin Connect.")
     st.stop()
 
@@ -890,7 +840,7 @@ pmc = A.compute_pmc(daily_load)
 acwr = A.compute_acwr(daily_load)
 heat = A.heat_adjusted_pace(acts) if not acts.empty else pd.DataFrame()
 ef = A.efficiency_factor(acts) if not acts.empty else pd.Series(dtype=float)
-polarization_stats = A.polarization(acts) if not acts.empty else {}
+weekly_polarization = A.weekly_polarization(acts) if not acts.empty else pd.DataFrame()
 
 all_time_best_efforts = {}
 if not acts.empty and "best_efforts" in acts.columns:
@@ -900,13 +850,18 @@ if not acts.empty and "best_efforts" in acts.columns:
             for k, v in be.items():
                 if k not in all_time_best_efforts or v < all_time_best_efforts[k]:
                     all_time_best_efforts[k] = v
-own_predictions = A.predict_race_times(all_time_best_efforts)
+riegel_predictions = A.predict_race_times_riegel(all_time_best_efforts)
+cameron_predictions = A.predict_race_times_cameron(all_time_best_efforts)
+latest_vo2max = daily["vo2max.value"].dropna().iloc[-1] if "vo2max.value" in daily.columns and daily["vo2max.value"].notna().any() else None
+daniels_predictions = A.predict_race_times_daniels(latest_vo2max)
 
 ctx = {
     "daily": daily, "acts": acts, "weekly_periods": weekly_periods, "weekly_counts": weekly_counts,
     "monthly_periods": monthly_periods, "long_run_this_week": long_run_this_week, "weekly_run_target": weekly_run_target,
     "goal_marathon_sec": goal_marathon_sec, "pmc": pmc, "acwr": acwr, "heat": heat, "ef": ef,
-    "polarization": polarization_stats, "own_predictions": own_predictions,
+    "weekly_polarization": weekly_polarization, "riegel_predictions": riegel_predictions,
+    "cameron_predictions": cameron_predictions, "daniels_predictions": daniels_predictions,
+    "latest_vo2max": latest_vo2max,
 }
 
 
@@ -949,50 +904,92 @@ if race_date:
 else:
     st.info("Set your race date in the sidebar to see the countdown and training-phase rail.")
 
-st.title("🏃 Running Dashboard")
+st.title("Running Dashboard")
 
 
 # --------------------------------------------------------------------------
-# Status chips
-# --------------------------------------------------------------------------
-
-chips_html = '<div class="rd-chips">'
-latest_tsb = pmc["tsb"].iloc[-1] if not pmc.empty else None
-tsb_sev = A.classify_tsb(latest_tsb)
-tsb_status = {"good": "Fresh — absorbing load well", "warning": "Building fatigue", "critical": "High fatigue — recover"}.get(tsb_sev, "No data yet")
-chips_html += chip("Form (TSB)", f"{latest_tsb:+.1f}" if latest_tsb is not None else "--", tsb_status, tsb_sev)
-
-latest_acwr = acwr.iloc[-1] if not acwr.empty else None
-acwr_sev = A.classify_acwr(latest_acwr)
-acwr_status = {"good": "In the sweet spot", "warning": "Outside 0.8–1.3", "critical": "High injury-risk zone"}.get(acwr_sev, "No data yet")
-chips_html += chip("Load Ratio (ACWR)", f"{latest_acwr:.2f}" if latest_acwr is not None else "--", acwr_status, acwr_sev)
-
-hrv_status_val = daily["hrv.status"].dropna().iloc[-1] if "hrv.status" in daily.columns and daily["hrv.status"].notna().any() else None
-rhr_val = daily["rhr.value"].dropna().iloc[-1] if "rhr.value" in daily.columns and daily["rhr.value"].notna().any() else None
-hrv_sev = "good" if hrv_status_val == "BALANCED" else ("warning" if hrv_status_val else None)
-chips_html += chip("HRV Status", hrv_status_val or "--", f"RHR {rhr_val:.0f} bpm" if rhr_val else "No data yet", hrv_sev)
-
-this_week_km = weekly_periods.iloc[-1] if not weekly_periods.empty else None
-runs_this_week = weekly_counts.iloc[-1] if not weekly_counts.empty else None
-long_run_str = f"long run {long_run_this_week:.1f} km" if long_run_this_week is not None else "no runs yet"
-chips_html += chip("This Week", f'{this_week_km:.1f}<small>km</small>' if this_week_km is not None else "--",
-                    f"{int(runs_this_week) if runs_this_week is not None else 0} runs · {long_run_str}", "accent")
-chips_html += "</div>"
-st.markdown(chips_html, unsafe_allow_html=True)
-
-
-# --------------------------------------------------------------------------
-# Tabs
-# --------------------------------------------------------------------------
-
+# Tabs -- selected before the status chips so the chips can be contextual.
 # st.tabs() panels are hidden (height-collapsed) until clicked, and Vega /
-# the dataframe grid measure their container once at mount time -- they never
-# recover from mounting inside a zero-height panel. A segmented control that
-# conditionally renders only the selected tab's Python code sidesteps that
-# entirely: nothing ever mounts while hidden.
+# the dataframe grid measure their container once at mount time -- they
+# never recover from mounting inside a zero-height panel. A segmented
+# control that conditionally renders only the selected tab's Python code
+# sidesteps that entirely: nothing ever mounts while hidden.
+# --------------------------------------------------------------------------
+
 active_tab = st.segmented_control("Section", TAB_ORDER, default=TAB_ORDER[0], label_visibility="collapsed")
 if not active_tab:
     active_tab = TAB_ORDER[0]
+
+
+# --------------------------------------------------------------------------
+# Status chips -- contextual to the active tab
+# --------------------------------------------------------------------------
+
+latest_tsb = pmc["tsb"].iloc[-1] if not pmc.empty else None
+latest_acwr = acwr.iloc[-1] if not acwr.empty else None
+hrv_status_val = daily["hrv.status"].dropna().iloc[-1] if "hrv.status" in daily.columns and daily["hrv.status"].notna().any() else None
+rhr_val = daily["rhr.value"].dropna().iloc[-1] if "rhr.value" in daily.columns and daily["rhr.value"].notna().any() else None
+this_week_km = weekly_periods.iloc[-1] if not weekly_periods.empty else None
+runs_this_week = weekly_counts.iloc[-1] if not weekly_counts.empty else None
+
+chips = []
+if active_tab == "Load":
+    tsb_sev = A.classify_tsb(latest_tsb)
+    tsb_status = {"good": "Fresh — absorbing load well", "warning": "Building fatigue", "critical": "High fatigue — recover"}.get(tsb_sev, "No data yet")
+    chips.append(chip("Form (TSB)", f"{latest_tsb:+.1f}" if latest_tsb is not None else "--", tsb_status, tsb_sev))
+    acwr_sev = A.classify_acwr(latest_acwr)
+    acwr_status = {"good": "In the sweet spot", "warning": "Outside 0.8–1.3", "critical": "High injury-risk zone"}.get(acwr_sev, "No data yet")
+    chips.append(chip("Load Ratio (ACWR)", f"{latest_acwr:.2f}" if latest_acwr is not None else "--", acwr_status, acwr_sev))
+    long_run_str = f"long run {long_run_this_week:.1f} km" if long_run_this_week is not None else "no runs yet"
+    chips.append(chip("This Week", f'{this_week_km:.1f}<small>km</small>' if this_week_km is not None else "--",
+                       f"{int(runs_this_week) if runs_this_week is not None else 0} runs · {long_run_str}", "accent"))
+    streak = compute_streak(weekly_counts, weekly_run_target) if not weekly_counts.empty else None
+    chips.append(chip("Streak", f"{streak}<small>wk</small>" if streak is not None else "--", f"weeks hitting {weekly_run_target}+ runs", "accent" if streak else None))
+
+elif active_tab == "Fitness":
+    vo2_val = latest_vo2max
+    chips.append(chip("VO2max", f"{vo2_val:.1f}" if vo2_val is not None else "--", "latest reading", "accent" if vo2_val else None))
+    ef_val = ef.iloc[-1] if not ef.empty else None
+    chips.append(chip("Efficiency Factor", f"{ef_val:.4f}" if ef_val is not None else "--", "speed per heartbeat", "accent" if ef_val else None))
+    garmin_marathon = daily["race_predictions.time_marathon_sec"].dropna().iloc[-1] if "race_predictions.time_marathon_sec" in daily.columns and daily["race_predictions.time_marathon_sec"].notna().any() else None
+    chips.append(chip("Garmin Marathon Est.", format_duration(garmin_marathon), "proprietary estimate", "accent" if garmin_marathon else None))
+    fastest = acts["avg_pace_min_per_km"].min() if not acts.empty and acts["avg_pace_min_per_km"].notna().any() else None
+    chips.append(chip("Fastest Pace", format_pace(fastest) if fastest is not None else "--", "personal record", "accent" if fastest is not None else None))
+
+elif active_tab == "Best Efforts":
+    for label, key in [("1 km", "1k"), ("5 km", "5k"), ("10 km", "10k")]:
+        best = all_time_best_efforts.get(key)
+        chips.append(chip(f"Best {label}", format_duration(best), "all-time", "accent" if best else None))
+    this_week_5k, _ = A.this_week_vs_alltime_best(acts, "5k") if not acts.empty and "best_efforts" in acts.columns else (None, None)
+    chips.append(chip("This Week's Best 5K", format_duration(this_week_5k), "so far this week", "accent" if this_week_5k else None))
+
+elif active_tab == "Recovery":
+    hrv_sev = "good" if hrv_status_val == "BALANCED" else ("warning" if hrv_status_val else None)
+    chips.append(chip("HRV Status", hrv_status_val or "--", f"RHR {rhr_val:.0f} bpm" if rhr_val else "No data yet", hrv_sev))
+    sleep_last = daily["sleep.duration_hours"].dropna().iloc[-1] if "sleep.duration_hours" in daily.columns and daily["sleep.duration_hours"].notna().any() else None
+    sleep_avg = daily["sleep.avg_7day_duration_hours"].dropna().iloc[-1] if "sleep.avg_7day_duration_hours" in daily.columns and daily["sleep.avg_7day_duration_hours"].notna().any() else None
+    sleep_sev = "good" if (sleep_last is not None and sleep_avg is not None and sleep_last >= sleep_avg) else ("warning" if sleep_last is not None else None)
+    chips.append(chip("Sleep", f"{sleep_last:.1f}<small>hrs</small>" if sleep_last is not None else "--", f"7-day avg {sleep_avg:.1f} hrs" if sleep_avg is not None else "No data yet", sleep_sev))
+    stress_last = daily["stress.avg_stress"].dropna().iloc[-1] if "stress.avg_stress" in daily.columns and daily["stress.avg_stress"].notna().any() else None
+    stress_avg = daily["stress.avg_7day"].dropna().iloc[-1] if "stress.avg_7day" in daily.columns and daily["stress.avg_7day"].notna().any() else None
+    stress_sev = "good" if (stress_last is not None and stress_avg is not None and stress_last <= stress_avg) else ("warning" if stress_last is not None else None)
+    chips.append(chip("Stress", f"{stress_last:.0f}" if stress_last is not None else "--", f"7-day avg {stress_avg:.0f}" if stress_avg is not None else "No data yet", stress_sev))
+    weekly_pol_latest = weekly_polarization.iloc[-1] if not weekly_polarization.empty else None
+    easy_pct = weekly_pol_latest["easy_pct"] if weekly_pol_latest is not None else None
+    chips.append(chip("Easy Share", f"{easy_pct:.0f}<small>%</small>" if easy_pct is not None else "--", "this week, target ~80%", "good" if (easy_pct is not None and easy_pct >= 75) else ("warning" if easy_pct is not None else None)))
+
+else:  # Runs
+    chips.append(chip("This Week", f'{this_week_km:.1f}<small>km</small>' if this_week_km is not None else "--",
+                       f"{int(runs_this_week) if runs_this_week is not None else 0} runs", "accent"))
+    total_km = acts["distance_km"].sum() if not acts.empty else None
+    chips.append(chip("Total Distance", f"{total_km:.0f}<small>km</small>" if total_km is not None else "--", "all synced history", "accent" if total_km else None))
+    longest = acts["distance_km"].max() if not acts.empty else None
+    chips.append(chip("Longest Run", f"{longest:.1f}<small>km</small>" if longest is not None else "--", "personal record", "accent" if longest is not None else None))
+    avg_pace_recent = acts.tail(5)["avg_pace_min_per_km"].mean() if not acts.empty else None
+    chips.append(chip("Recent Avg Pace", format_pace(avg_pace_recent) if avg_pace_recent is not None and pd.notna(avg_pace_recent) else "--", "last 5 runs", "accent" if avg_pace_recent is not None else None))
+
+st.markdown('<div class="rd-chips">' + "".join(chips) + "</div>", unsafe_allow_html=True)
+
 
 tab_sections = [s for s in SECTIONS if s["tab"] == active_tab]
 visible = [s for s in tab_sections if enabled_sections.get(s["id"], s["default"])]

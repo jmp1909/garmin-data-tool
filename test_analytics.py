@@ -192,17 +192,99 @@ def test_riegel_predict_same_distance_returns_same_time():
     assert A.riegel_predict(1200, 5000, 5000) == pytest.approx(1200)
 
 
-def test_predict_race_times_uses_longest_known_reference():
+def test_predict_race_times_riegel_uses_longest_known_reference():
     # both 5k and 10k known -- must extrapolate from 10k (the longer one)
     best_efforts = {"5k": 1200, "10k": 2500}
-    result = A.predict_race_times(best_efforts)
-    expected_5k = round(A.riegel_predict(2500, 10000, 5000), 1)  # predict_race_times rounds to 1dp
+    result = A.predict_race_times_riegel(best_efforts)
+    expected_5k = round(A.riegel_predict(2500, 10000, 5000), 1)
     assert result["5k"] == pytest.approx(expected_5k)
 
 
-def test_predict_race_times_empty_input():
-    assert A.predict_race_times({}) == {}
-    assert A.predict_race_times(None) == {}
+def test_predict_race_times_riegel_empty_input():
+    assert A.predict_race_times_riegel({}) == {}
+    assert A.predict_race_times_riegel(None) == {}
+
+
+# --------------------------------------------------------------------------
+# Cameron's formula
+# --------------------------------------------------------------------------
+
+def test_cameron_predict_same_distance_returns_same_time():
+    assert A.cameron_predict(1200, 5000, 5000) == pytest.approx(1200)
+
+
+def test_cameron_predict_matches_hand_computed_formula():
+    # f(x) = 13.49681 - 0.000030363*x + 835.7114/x^0.7905
+    f_5k = 13.49681 - 0.000030363 * 5000 + 835.7114 / (5000 ** 0.7905)
+    f_10k = 13.49681 - 0.000030363 * 10000 + 835.7114 / (10000 ** 0.7905)
+    expected = 1200 * (10000 / 5000) * (f_5k / f_10k)
+    assert A.cameron_predict(1200, 5000, 10000) == pytest.approx(expected)
+
+
+def test_predict_race_times_cameron_uses_longest_known_reference():
+    best_efforts = {"5k": 1200, "10k": 2500}
+    result = A.predict_race_times_cameron(best_efforts)
+    expected_5k = round(A.cameron_predict(2500, 10000, 5000), 1)
+    assert result["5k"] == pytest.approx(expected_5k)
+
+
+def test_predict_race_times_cameron_empty_input():
+    assert A.predict_race_times_cameron({}) == {}
+    assert A.predict_race_times_cameron(None) == {}
+
+
+# --------------------------------------------------------------------------
+# Daniels/Gilbert VDOT
+# --------------------------------------------------------------------------
+
+def test_daniels_percent_max_at_short_duration_is_near_full_effort():
+    # a ~4 minute effort should sit close to 100% of VO2max
+    assert A.daniels_percent_max(4) > 0.97
+
+
+def test_daniels_percent_max_decreases_with_duration():
+    assert A.daniels_percent_max(10) > A.daniels_percent_max(60) > A.daniels_percent_max(180)
+
+
+def test_daniels_velocity_for_vdot_round_trips_through_vo2_cost():
+    # whatever velocity solves VO2(v) = vdot * %max(t), plugging it back in
+    # must reproduce the same required VO2 -- this is what the fixed-point
+    # iteration is actually claiming to have solved
+    vdot = 50.0
+    distance_m = 5000.0
+    v = A.daniels_velocity_for_vdot(vdot, distance_m)
+    assert v is not None
+    t_min = distance_m / v
+    assert A.daniels_vo2_cost(v) == pytest.approx(vdot * A.daniels_percent_max(t_min), rel=1e-4)
+
+
+def test_daniels_predict_and_vdot_from_performance_are_inverses():
+    # predicting a time from a VDOT, then computing the VDOT implied by that
+    # exact performance, should recover the original VDOT
+    vdot = 45.0
+    distance_m = 10000.0
+    predicted_sec = A.daniels_predict_time_sec(vdot, distance_m)
+    assert predicted_sec is not None
+    recovered_vdot = A.vdot_from_performance(distance_m, predicted_sec)
+    assert recovered_vdot == pytest.approx(vdot, rel=1e-3)
+
+
+def test_daniels_higher_vdot_predicts_faster_time():
+    slow = A.daniels_predict_time_sec(35.0, 10000.0)
+    fast = A.daniels_predict_time_sec(55.0, 10000.0)
+    assert fast < slow
+
+
+def test_predict_race_times_daniels_empty_input():
+    assert A.predict_race_times_daniels(None) == {}
+    assert A.predict_race_times_daniels(0) == {}
+
+
+def test_predict_race_times_daniels_returns_all_standard_distances():
+    result = A.predict_race_times_daniels(50.0)
+    assert set(result.keys()) == set(A.STANDARD_DISTANCES_M.keys())
+    # times should be increasing with distance
+    assert result["5k"] < result["10k"] < result["half"] < result["marathon"]
 
 
 # --------------------------------------------------------------------------
@@ -274,3 +356,30 @@ def test_polarization_hand_computed():
 def test_polarization_no_hr_zone_data_returns_empty_dict():
     acts = acts_df([{"date": "2026-07-01", "hr_zones": None}])
     assert A.polarization(acts) == {}
+
+
+def test_weekly_polarization_groups_by_week_and_sums():
+    # two runs in the same week must combine into one row
+    acts = acts_df([
+        {"date": "2026-07-01", "hr_zones": {"zone_1": 100, "zone_2": 0, "zone_3": 0, "zone_4": 0, "zone_5": 0}},
+        {"date": "2026-07-02", "hr_zones": {"zone_1": 0, "zone_2": 0, "zone_3": 100, "zone_4": 0, "zone_5": 0}},
+    ])
+    weekly = A.weekly_polarization(acts)
+    assert len(weekly) == 1
+    assert weekly.iloc[0]["easy_pct"] == pytest.approx(50.0)
+    assert weekly.iloc[0]["moderate_pct"] == pytest.approx(50.0)
+
+
+def test_weekly_polarization_separates_distinct_weeks():
+    acts = acts_df([
+        {"date": "2026-06-01", "hr_zones": {"zone_1": 100, "zone_2": 0, "zone_3": 0, "zone_4": 0, "zone_5": 0}},
+        {"date": "2026-07-01", "hr_zones": {"zone_1": 0, "zone_2": 0, "zone_3": 0, "zone_4": 100, "zone_5": 0}},
+    ])
+    weekly = A.weekly_polarization(acts)
+    assert len(weekly) == 2
+    assert list(weekly["easy_pct"]) == [100.0, 0.0]
+
+
+def test_weekly_polarization_empty_when_no_hr_zones():
+    acts = acts_df([{"date": "2026-07-01", "hr_zones": None}])
+    assert A.weekly_polarization(acts).empty

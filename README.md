@@ -6,10 +6,11 @@ Garmin Connect already shows you. It computes fitness/fatigue/form, injury-risk
 load ratios, heat-adjusted pace, and a from-scratch race predictor from your
 own best efforts, none of which Garmin exposes directly.
 
-Every widget is optional. Open the sidebar **⚙️ Settings** panel to pick which
+Every widget is optional. Open the sidebar **Settings** panel to pick which
 sections show up, set your race date and goal time, tune the weekly run
 target, and adjust the run-type detection thresholds — your choices are saved
-locally and reloaded next time you open the dashboard.
+locally and reloaded next time you open the dashboard. The status chips above
+the tabs are contextual to whichever tab you're on.
 
 ## How it works
 
@@ -32,25 +33,28 @@ model), acute:chronic workload ratio with its injury-risk band, weekly/monthly
 mileage, weekly run count vs. your target.
 
 **Fitness** — VO2max trend, marathon/half-marathon and 5K/10K race predictors
-(with an optional goal-time reference line), a from-your-own-data Riegel
-predictor shown next to Garmin's own estimate, heat-adjusted pace, efficiency
-factor, personal records.
+(with an optional goal-time reference line), a race-predictor comparison
+across three independent methods (Riegel and Cameron from your own best
+efforts, Daniels/Gilbert VDOT from Garmin's measured VO2max) shown next to
+Garmin's own estimate, heat-adjusted pace, efficiency factor, personal
+records.
 
 **Best Efforts** — fastest *continuous* 1K/3K/5K/10K segment found anywhere
 inside any run (not Garmin's own lap markers, which are inconsistent between
 manual and auto laps) — this week vs. all-time, plus a leaderboard.
 
 **Recovery** — HRV & resting heart rate, sleep vs. rolling average, stress,
-body battery, training polarization (the 80/20 easy/hard split).
+and a weekly training polarization chart (the 80/20 easy/hard split).
 
 **Runs** — recent runs table, pace-vs-heart-rate scatter (aerobic
-decoupling), a GitHub-style run-consistency calendar.
+decoupling).
 
-Every chart with a line or area gets a crosshair + hover tooltip. Metrics with
-non-obvious methodology (PMC, ACWR, heat adjustment, Riegel) have an (ℹ️)
-next to the title explaining exactly how they're computed — see also the
-docstring at the top of `analytics.py` for the full methodology notes,
-including the simplifications each model makes.
+Every chart with a line or area gets a crosshair + hover tooltip showing
+every series' value at that point together, not just the date. Metrics with
+non-obvious methodology (PMC, ACWR, heat adjustment, Riegel, Cameron,
+Daniels/VDOT) have an (ℹ️) next to the title explaining exactly how they're
+computed — see also the docstring at the top of `analytics.py` for the full
+methodology notes, including the simplifications each model makes.
 
 ## Prerequisites
 
@@ -96,7 +100,7 @@ that, a `.garmin_tokens/` folder is created holding your cached session, so
 future syncs won't need your password or MFA code again until it expires.
 
 Set your race date, goal time, and which sections you want in the sidebar
-**⚙️ Settings** panel — none of it is hardcoded.
+**Settings** panel — none of it is hardcoded.
 
 ## Day-to-day use
 
@@ -107,7 +111,7 @@ streamlit run dashboard.py
 ```
 
 It automatically re-syncs once per calendar day. To force a fresh pull
-mid-session (e.g. right after finishing a run), click **🔄 Sync now** in the
+mid-session (e.g. right after finishing a run), click **Sync now** in the
 sidebar.
 
 On Windows, `run_dashboard.bat` does the same thing and can be turned into a
@@ -123,7 +127,7 @@ python sync.py
 
 ## Customizing your dashboard
 
-Everything below is set from the sidebar **⚙️ Settings** panel (no code
+Everything below is set from the sidebar **Settings** panel (no code
 editing required) and persisted to `data/config.json`, which is gitignored —
 your personal preferences never get committed:
 
@@ -154,10 +158,10 @@ def render_my_widget(ctx):
 That's the entire integration point — the same registry drives the tab
 layout and the Settings-panel checkboxes, so a new widget shows up in both
 automatically. `ctx` carries the loaded `daily`/`acts` DataFrames, the
-computed analytics (`pmc`, `acwr`, `heat`, `ef`, `polarization`,
-`own_predictions`), and the current config values; see the existing sections
-for examples. The five tabs are `Load`, `Fitness`, `Best Efforts`,
-`Recovery`, `Runs`.
+computed analytics (`pmc`, `acwr`, `heat`, `ef`, `weekly_polarization`,
+`riegel_predictions`, `cameron_predictions`, `daniels_predictions`), and the
+current config values; see the existing sections for examples. The five tabs
+are `Load`, `Fitness`, `Best Efforts`, `Recovery`, `Runs`.
 
 ### Adding your own analytics model
 

@@ -19,8 +19,20 @@ Methodology notes (the honest version, not just what the chart says):
   0.8-1.3 considered the "sweet spot" per the published literature.
 - Heat adjustment is a simple linear approximation (~0.5%/deg C above
   15C), not a validated physiological model -- treat it as directional.
-- Race predictions use Riegel's formula (T2 = T1 * (D2/D1)^1.06) fitted to
-  your own best-known effort, shown alongside Garmin's own estimate.
+- Race predictions are shown from three independent methods, alongside
+  Garmin's own estimate:
+    * Riegel (T2 = T1 * (D2/D1)^1.06), fitted to your own best-known effort.
+    * Cameron (T2 = T1 * (D2/D1) * f(D1)/f(D2), f(x) = 13.49681 -
+      0.000030363*x + 835.7114/x^0.7905, x in meters), also fitted to your
+      best-known effort. A different curve shape than Riegel's constant
+      exponent -- where they agree is a stronger signal than either alone.
+    * Daniels/Gilbert VDOT, using Garmin's own estimated VO2max as the VDOT
+      input. VO2max and VDOT are closely related but not strictly identical
+      quantities -- this is a commonly-used approximation, not an exact
+      substitution. Predicts a velocity by iteratively solving
+      VO2(v) = VDOT * %max(t) where VO2(v) = -4.60 + 0.182258*v +
+      0.000104*v^2 (v in m/min) and %max(t) = 0.8 + 0.1894393*e^(-0.012778*t)
+      + 0.2989558*e^(-0.1932605*t) (t in minutes).
 """
 
 import math
@@ -163,24 +175,113 @@ def efficiency_factor(acts: pd.DataFrame) -> pd.Series:
 # Race prediction
 # --------------------------------------------------------------------------
 
+def _reference_effort(all_time_best_efforts: dict):
+    """Picks the longest known best effort as the extrapolation reference --
+    both Riegel and Cameron are most reliable predicting from a similar-or-
+    longer known distance."""
+    known = {BEST_EFFORT_DISTANCES_M[k]: v for k, v in (all_time_best_efforts or {}).items()
+             if v and k in BEST_EFFORT_DISTANCES_M}
+    if not known:
+        return None, None
+    reference_dist = max(known)
+    return reference_dist, known[reference_dist]
+
+
 def riegel_predict(known_time_sec, known_distance_m, target_distance_m, exponent: float = 1.06):
     if not known_time_sec or not known_distance_m:
         return None
     return known_time_sec * (target_distance_m / known_distance_m) ** exponent
 
 
-def predict_race_times(all_time_best_efforts: dict, exponent: float = 1.06) -> dict:
-    """all_time_best_efforts: {"1k": sec, "3k": sec, "5k": sec, "10k": sec}.
-    Extrapolates from the longest known effort, since Riegel is most
-    reliable predicting from a similar-or-longer reference distance."""
-    known = {BEST_EFFORT_DISTANCES_M[k]: v for k, v in (all_time_best_efforts or {}).items()
-             if v and k in BEST_EFFORT_DISTANCES_M}
-    if not known:
+def predict_race_times_riegel(all_time_best_efforts: dict, exponent: float = 1.06) -> dict:
+    """all_time_best_efforts: {"1k": sec, "3k": sec, "5k": sec, "10k": sec}."""
+    reference_dist, reference_time = _reference_effort(all_time_best_efforts)
+    if reference_dist is None:
         return {}
-    reference_dist = max(known)
-    reference_time = known[reference_dist]
     return {label: round(riegel_predict(reference_time, reference_dist, target_m, exponent), 1)
             for label, target_m in STANDARD_DISTANCES_M.items()}
+
+
+def _cameron_f(distance_m: float) -> float:
+    return 13.49681 - 0.000030363 * distance_m + 835.7114 / (distance_m ** 0.7905)
+
+
+def cameron_predict(known_time_sec, known_distance_m, target_distance_m):
+    if not known_time_sec or not known_distance_m:
+        return None
+    return known_time_sec * (target_distance_m / known_distance_m) * (_cameron_f(known_distance_m) / _cameron_f(target_distance_m))
+
+
+def predict_race_times_cameron(all_time_best_efforts: dict) -> dict:
+    reference_dist, reference_time = _reference_effort(all_time_best_efforts)
+    if reference_dist is None:
+        return {}
+    return {label: round(cameron_predict(reference_time, reference_dist, target_m), 1)
+            for label, target_m in STANDARD_DISTANCES_M.items()}
+
+
+def daniels_percent_max(t_min: float) -> float:
+    """Fraction of VO2max sustainable for t_min minutes (Daniels & Gilbert)."""
+    return 0.8 + 0.1894393 * math.exp(-0.012778 * t_min) + 0.2989558 * math.exp(-0.1932605 * t_min)
+
+
+def daniels_vo2_cost(velocity_m_per_min: float) -> float:
+    """Oxygen cost of running at a given velocity (Daniels & Gilbert)."""
+    return -4.60 + 0.182258 * velocity_m_per_min + 0.000104 * velocity_m_per_min ** 2
+
+
+def daniels_velocity_for_vdot(vdot: float, distance_m: float, max_iter: int = 50, tol: float = 1e-6):
+    """Solves VO2(v) = vdot * %max(distance_m/v) for v via fixed-point
+    iteration: the %max side is evaluated at the current velocity guess,
+    then the resulting quadratic in v is solved exactly, repeated to
+    convergence. Returns velocity in m/min, or None if unsolvable."""
+    if not vdot or vdot <= 0 or not distance_m or distance_m <= 0:
+        return None
+    v = 200.0  # initial guess, ~5:00/km
+    for _ in range(max_iter):
+        t_min = distance_m / v
+        needed_vo2 = vdot * daniels_percent_max(t_min)
+        a, b, c = 0.000104, 0.182258, -(4.60 + needed_vo2)
+        discriminant = b * b - 4 * a * c
+        if discriminant < 0:
+            return None
+        new_v = (-b + math.sqrt(discriminant)) / (2 * a)
+        if abs(new_v - v) < tol:
+            return new_v
+        v = new_v
+    return v
+
+
+def daniels_predict_time_sec(vdot, target_distance_m):
+    v = daniels_velocity_for_vdot(vdot, target_distance_m)
+    if not v or v <= 0:
+        return None
+    return (target_distance_m / v) * 60
+
+
+def vdot_from_performance(distance_m, time_sec):
+    """Inverse of the above: the VDOT implied by an actual (distance, time)
+    performance. Used only to self-check daniels_predict_time_sec's
+    round-trip consistency in tests -- not exposed in the UI."""
+    if not distance_m or not time_sec:
+        return None
+    t_min = time_sec / 60
+    v = distance_m / t_min
+    pct = daniels_percent_max(t_min)
+    if pct <= 0:
+        return None
+    return daniels_vo2_cost(v) / pct
+
+
+def predict_race_times_daniels(vo2max_value) -> dict:
+    if not vo2max_value:
+        return {}
+    result = {}
+    for label, target_m in STANDARD_DISTANCES_M.items():
+        t = daniels_predict_time_sec(vo2max_value, target_m)
+        if t is not None:
+            result[label] = round(t, 1)
+    return result
 
 
 # --------------------------------------------------------------------------
@@ -243,3 +344,30 @@ def polarization(acts: pd.DataFrame) -> dict:
         "moderate_pct": round(moderate / total * 100, 1),
         "hard_pct": round(hard / total * 100, 1),
     }
+
+
+def weekly_polarization(acts: pd.DataFrame) -> pd.DataFrame:
+    """Per-week easy/moderate/hard time-in-zone shares, for a polarization
+    trend chart (as opposed to polarization()'s single all-time aggregate)."""
+    cols = ["week", "easy_pct", "moderate_pct", "hard_pct"]
+    if acts.empty or "hr_zones" not in acts.columns:
+        return pd.DataFrame(columns=cols)
+    rows = []
+    for _, row in acts.iterrows():
+        zones = row.get("hr_zones")
+        if not isinstance(zones, dict):
+            continue
+        rows.append({
+            "week": pd.Timestamp(row["date"]).to_period("W").start_time,
+            "easy": zones.get("zone_1", 0) + zones.get("zone_2", 0),
+            "moderate": zones.get("zone_3", 0),
+            "hard": zones.get("zone_4", 0) + zones.get("zone_5", 0),
+        })
+    if not rows:
+        return pd.DataFrame(columns=cols)
+    grouped = pd.DataFrame(rows).groupby("week", as_index=False).sum()
+    total = grouped["easy"] + grouped["moderate"] + grouped["hard"]
+    grouped["easy_pct"] = (grouped["easy"] / total * 100).round(1)
+    grouped["moderate_pct"] = (grouped["moderate"] / total * 100).round(1)
+    grouped["hard_pct"] = (grouped["hard"] / total * 100).round(1)
+    return grouped[cols].sort_values("week").reset_index(drop=True)
