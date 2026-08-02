@@ -22,6 +22,15 @@ DATA_FILE = Path(os.getenv("GARMIN_DATA_FILE", BASE_DIR / "data" / "garmin_histo
 TOKEN_STORE = Path(os.getenv("GARMIN_TOKEN_STORE", BASE_DIR / ".garmin_tokens"))
 BACKFILL_DAYS = int(os.getenv("GARMIN_BACKFILL_DAYS", 84))  # ~12 weeks, used on first run only
 ACTIVITY_LOOKBACK_DAYS = int(os.getenv("GARMIN_ACTIVITY_LOOKBACK_DAYS", 10))
+# One-time deep pull so PMC/ACWR (need ~6 weeks of load history) and the all-time
+# best-efforts leaderboard aren't starved by the normal 10-day rolling window.
+ACTIVITY_BACKFILL_DAYS = int(os.getenv("GARMIN_ACTIVITY_BACKFILL_DAYS", 365))
+# Per-activity enrichment (best efforts, weather, HR zones) costs 3 extra API
+# calls each -- bounded separately so a multi-year history doesn't turn a sync
+# into thousands of requests.
+DETAIL_ENRICHMENT_DAYS = int(os.getenv("GARMIN_DETAIL_ENRICHMENT_DAYS", 120))
+
+BEST_EFFORT_DISTANCES_M = {"1k": 1000, "3k": 3000, "5k": 5000, "10k": 10000}
 
 log = logging.getLogger("garmin_sync")
 
@@ -154,6 +163,101 @@ def fetch_stress(client, date_str):
     return {"avg_stress": avg} if avg is not None else None
 
 
+def fetch_body_battery(client, date_str):
+    raw = safe_call("body_battery", client.get_body_battery, date_str, date_str)
+    if not isinstance(raw, list) or not raw:
+        return None
+    entry = raw[0]
+    if not isinstance(entry, dict):
+        return None
+    charged, drained = entry.get("charged"), entry.get("drained")
+    end_level = None
+    values = entry.get("bodyBatteryValuesArray") or []
+    if values and isinstance(values[-1], list) and len(values[-1]) >= 2:
+        end_level = values[-1][1]
+    if charged is None and drained is None and end_level is None:
+        return None
+    return {"charged": charged, "drained": drained, "end_level": end_level}
+
+
+def sliding_window_best_time(distances_m, times_s, target_m):
+    """Minimum elapsed time (seconds) to cover target_m anywhere in the
+    activity, via a two-pointer scan over monotonic cumulative distance/time
+    arrays. Returns None if the activity never covers that distance."""
+    n = len(distances_m)
+    if n == 0 or distances_m[-1] < target_m:
+        return None
+    best = None
+    j = 0
+    for i in range(n):
+        if j < i:
+            j = i
+        while j < n and distances_m[j] - distances_m[i] < target_m:
+            j += 1
+        if j >= n:
+            break
+        duration = times_s[j] - times_s[i]
+        if best is None or duration < best:
+            best = duration
+    return best
+
+
+def fetch_activity_best_efforts(client, activity_id):
+    """Scans the raw per-point activity stream (not Garmin's own lap
+    boundaries, which are inconsistent/manual) for the fastest continuous
+    1k/3k/5k/10k segment anywhere in the activity."""
+    raw = safe_call("activity_details", client.get_activity_details, activity_id)
+    if not isinstance(raw, dict):
+        return None
+    descriptors = raw.get("metricDescriptors") or []
+    index_by_key = {d.get("key"): d.get("metricsIndex") for d in descriptors if isinstance(d, dict)}
+    dist_idx, dur_idx = index_by_key.get("sumDistance"), index_by_key.get("sumDuration")
+    if dist_idx is None or dur_idx is None:
+        return None
+
+    distances, times = [], []
+    for point in raw.get("activityDetailMetrics") or []:
+        metrics = point.get("metrics") if isinstance(point, dict) else None
+        if not metrics or len(metrics) <= max(dist_idx, dur_idx):
+            continue
+        d, t = metrics[dist_idx], metrics[dur_idx]
+        if isinstance(d, (int, float)) and isinstance(t, (int, float)):
+            distances.append(d)
+            times.append(t)
+    if len(distances) < 2:
+        return None
+
+    result = {}
+    for label, target_m in BEST_EFFORT_DISTANCES_M.items():
+        best = sliding_window_best_time(distances, times, target_m)
+        if best is not None:
+            result[label] = round(best, 1)
+    return result or None
+
+
+def fetch_activity_weather(client, activity_id):
+    raw = safe_call("activity_weather", client.get_activity_weather, activity_id)
+    if not isinstance(raw, dict):
+        return None
+    temp_f = first_present(raw, "temp")
+    humidity = first_present(raw, "relativeHumidity")
+    if temp_f is None:
+        return None
+    return {"temp_c": round((temp_f - 32) * 5 / 9, 1), "humidity_pct": humidity}
+
+
+def fetch_activity_hr_zones(client, activity_id):
+    raw = safe_call("activity_hr_zones", client.get_activity_hr_in_timezones, activity_id)
+    if not isinstance(raw, list) or not raw:
+        return None
+    zones = {}
+    for z in raw:
+        num, secs = z.get("zoneNumber"), z.get("secsInZone")
+        if num is not None and secs is not None:
+            zones[f"zone_{num}"] = round(secs, 1)
+    return zones or None
+
+
 def extract_activity(raw):
     if not isinstance(raw, dict):
         return None
@@ -240,6 +344,9 @@ def sync_wellness(client, data, days):
         stress = fetch_stress(client, date_str)
         if stress:
             entry["stress"] = stress
+        battery = fetch_body_battery(client, date_str)
+        if battery:
+            entry["body_battery"] = battery
 
         entry["synced_at"] = datetime.now().astimezone().isoformat()
         data["daily"][date_str] = entry
@@ -248,16 +355,38 @@ def sync_wellness(client, data, days):
     compute_rolling_averages(data)
 
 
-def sync_activities(client, data, lookback_days):
+def sync_activities(client, data, lookback_days, enrich_days):
     end_date = date.today()
     start_date = end_date - timedelta(days=lookback_days)
+    enrich_cutoff = end_date - timedelta(days=enrich_days)
     raw_list = safe_call(
         "activities", client.get_activities_by_date, start_date.isoformat(), end_date.isoformat()
     ) or []
     for raw in raw_list:
         activity = extract_activity(raw)
-        if activity is not None:
-            data["activities"][str(activity["activity_id"])] = activity
+        if activity is None:
+            continue
+        activity_id = activity["activity_id"]
+        try:
+            activity_date = date.fromisoformat(activity["date"])
+        except (ValueError, TypeError):
+            activity_date = None
+
+        if activity_date and activity_date >= enrich_cutoff:
+            best_efforts = fetch_activity_best_efforts(client, activity_id)
+            if best_efforts:
+                activity["best_efforts"] = best_efforts
+            time.sleep(0.4)
+            weather = fetch_activity_weather(client, activity_id)
+            if weather:
+                activity["weather"] = weather
+            time.sleep(0.4)
+            hr_zones = fetch_activity_hr_zones(client, activity_id)
+            if hr_zones:
+                activity["hr_zones"] = hr_zones
+            time.sleep(0.4)
+
+        data["activities"][str(activity_id)] = activity
 
 
 # --------------------------------------------------------------------------
@@ -290,7 +419,12 @@ def run_sync() -> dict:
 
     is_first_run = len(data["daily"]) == 0
     sync_wellness(client, data, days=BACKFILL_DAYS if is_first_run else 1)
-    sync_activities(client, data, lookback_days=ACTIVITY_LOOKBACK_DAYS)
+
+    activities_backfilled = data["meta"].get("activities_backfilled", False)
+    activity_lookback = ACTIVITY_LOOKBACK_DAYS if activities_backfilled else ACTIVITY_BACKFILL_DAYS
+    sync_activities(client, data, lookback_days=activity_lookback, enrich_days=DETAIL_ENRICHMENT_DAYS)
+    if not activities_backfilled:
+        data["meta"]["activities_backfilled"] = True
 
     data["meta"]["last_sync"] = datetime.now().astimezone().isoformat()
     save_history(DATA_FILE, data)
