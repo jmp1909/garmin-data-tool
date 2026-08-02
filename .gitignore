@@ -5,3 +5,17 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+
+# Build/test artifacts
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+*.log
+
+# Editor/OS cruft
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

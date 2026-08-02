@@ -1,0 +1,5313 @@
+{
+  "daily": {
+    "2026-03-25": {
+      "vo2max": {
+        "value": 41.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1519,
+        "time_10k_sec": 3268,
+        "time_half_sec": 7242,
+        "time_marathon_sec": 15202
+      },
+      "hrv": {
+        "last_night_avg": 54,
+        "weekly_avg": 52,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 57.0
+      },
+      "sleep": {
+        "score": 67,
+        "duration_hours": 7.6,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 26,
+        "avg_7day": 30
+      },
+      "synced_at": "2026-03-25T06:05:00-04:00"
+    },
+    "2026-03-26": {
+      "vo2max": {
+        "value": 41.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1537,
+        "time_10k_sec": 3196,
+        "time_half_sec": 7090,
+        "time_marathon_sec": 15105
+      },
+      "hrv": {
+        "last_night_avg": 44,
+        "weekly_avg": 52,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 57,
+        "avg_7day": 56.9
+      },
+      "sleep": {
+        "score": 93,
+        "duration_hours": 7.8,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 35,
+        "avg_7day": 30
+      },
+      "synced_at": "2026-03-26T06:05:00-04:00"
+    },
+    "2026-03-27": {
+      "vo2max": {
+        "value": 42.0
+      },
+      "race_predictions": {
+        "time_5k_sec": 1539,
+        "time_10k_sec": 3196,
+        "time_half_sec": 7175,
+        "time_marathon_sec": 14892
+      },
+      "hrv": {
+        "last_night_avg": 57,
+        "weekly_avg": 52,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 56.9
+      },
+      "sleep": {
+        "score": 65,
+        "duration_hours": 7.7,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 49,
+        "avg_7day": 30
+      },
+      "synced_at": "2026-03-27T06:05:00-04:00"
+    },
+    "2026-03-28": {
+      "vo2max": {
+        "value": 41.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1512,
+        "time_10k_sec": 3214,
+        "time_half_sec": 7158,
+        "time_marathon_sec": 14854
+      },
+      "hrv": {
+        "last_night_avg": 45,
+        "weekly_avg": 52,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 56.8
+      },
+      "sleep": {
+        "score": 70,
+        "duration_hours": 6.5,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 34,
+        "avg_7day": 30
+      },
+      "synced_at": "2026-03-28T06:05:00-04:00"
+    },
+    "2026-03-29": {
+      "vo2max": {
+        "value": 41.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1542,
+        "time_10k_sec": 3212,
+        "time_half_sec": 7102,
+        "time_marathon_sec": 14959
+      },
+      "hrv": {
+        "last_night_avg": 64,
+        "weekly_avg": 52,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 58,
+        "avg_7day": 56.8
+      },
+      "sleep": {
+        "score": 85,
+        "duration_hours": 6.3,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 31,
+        "avg_7day": 30
+      },
+      "synced_at": "2026-03-29T06:05:00-04:00"
+    },
+    "2026-03-30": {
+      "vo2max": {
+        "value": 42.0
+      },
+      "race_predictions": {
+        "time_5k_sec": 1522,
+        "time_10k_sec": 3158,
+        "time_half_sec": 7051,
+        "time_marathon_sec": 15293
+      },
+      "hrv": {
+        "last_night_avg": 53,
+        "weekly_avg": 52,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 57,
+        "avg_7day": 56.7
+      },
+      "sleep": {
+        "score": 64,
+        "duration_hours": 8.0,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 35,
+        "avg_7day": 30
+      },
+      "synced_at": "2026-03-30T06:05:00-04:00"
+    },
+    "2026-03-31": {
+      "vo2max": {
+        "value": 41.5
+      },
+      "race_predictions": {
+        "time_5k_sec": 1585,
+        "time_10k_sec": 3174,
+        "time_half_sec": 7071,
+        "time_marathon_sec": 15516
+      },
+      "hrv": {
+        "last_night_avg": 48,
+        "weekly_avg": 52,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 59,
+        "avg_7day": 56.6
+      },
+      "sleep": {
+        "score": 80,
+        "duration_hours": 6.8,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 27,
+        "avg_7day": 30
+      },
+      "synced_at": "2026-03-31T06:05:00-04:00"
+    },
+    "2026-04-01": {
+      "vo2max": {
+        "value": 41.8
+      },
+      "race_predictions": {
+        "time_5k_sec": 1520,
+        "time_10k_sec": 3221,
+        "time_half_sec": 7019,
+        "time_marathon_sec": 14876
+      },
+      "hrv": {
+        "last_night_avg": 57,
+        "weekly_avg": 52,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 56.6
+      },
+      "sleep": {
+        "score": 68,
+        "duration_hours": 8.8,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 40,
+        "avg_7day": 30
+      },
+      "synced_at": "2026-04-01T06:05:00-04:00"
+    },
+    "2026-04-02": {
+      "vo2max": {
+        "value": 41.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1502,
+        "time_10k_sec": 3199,
+        "time_half_sec": 7069,
+        "time_marathon_sec": 14890
+      },
+      "hrv": {
+        "last_night_avg": 51,
+        "weekly_avg": 53,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 57,
+        "avg_7day": 56.5
+      },
+      "sleep": {
+        "score": 64,
+        "duration_hours": 6.9,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 40,
+        "avg_7day": 30
+      },
+      "synced_at": "2026-04-02T06:05:00-04:00"
+    },
+    "2026-04-03": {
+      "vo2max": {
+        "value": 42.5
+      },
+      "race_predictions": {
+        "time_5k_sec": 1535,
+        "time_10k_sec": 3177,
+        "time_half_sec": 7240,
+        "time_marathon_sec": 15261
+      },
+      "hrv": {
+        "last_night_avg": 58,
+        "weekly_avg": 53,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 56.4
+      },
+      "sleep": {
+        "score": 69,
+        "duration_hours": 7.0,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 26,
+        "avg_7day": 30
+      },
+      "synced_at": "2026-04-03T06:05:00-04:00"
+    },
+    "2026-04-04": {
+      "vo2max": {
+        "value": 42.5
+      },
+      "race_predictions": {
+        "time_5k_sec": 1565,
+        "time_10k_sec": 3200,
+        "time_half_sec": 6995,
+        "time_marathon_sec": 15016
+      },
+      "hrv": {
+        "last_night_avg": 53,
+        "weekly_avg": 53,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 60,
+        "avg_7day": 56.4
+      },
+      "sleep": {
+        "score": 83,
+        "duration_hours": 6.8,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 31,
+        "avg_7day": 30
+      },
+      "synced_at": "2026-04-04T06:05:00-04:00"
+    },
+    "2026-04-05": {
+      "vo2max": {
+        "value": 41.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1516,
+        "time_10k_sec": 3280,
+        "time_half_sec": 7027,
+        "time_marathon_sec": 14710
+      },
+      "hrv": {
+        "last_night_avg": 56,
+        "weekly_avg": 53,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 57,
+        "avg_7day": 56.3
+      },
+      "sleep": {
+        "score": 81,
+        "duration_hours": 6.9,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 23,
+        "avg_7day": 30
+      },
+      "synced_at": "2026-04-05T06:05:00-04:00"
+    },
+    "2026-04-06": {
+      "vo2max": {
+        "value": 41.9
+      },
+      "race_predictions": {
+        "time_5k_sec": 1504,
+        "time_10k_sec": 3139,
+        "time_half_sec": 7068,
+        "time_marathon_sec": 14936
+      },
+      "hrv": {
+        "last_night_avg": 60,
+        "weekly_avg": 53,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 57,
+        "avg_7day": 56.2
+      },
+      "sleep": {
+        "score": 81,
+        "duration_hours": 7.2,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 41,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-06T06:05:00-04:00"
+    },
+    "2026-04-07": {
+      "vo2max": {
+        "value": 42.1
+      },
+      "race_predictions": {
+        "time_5k_sec": 1495,
+        "time_10k_sec": 3255,
+        "time_half_sec": 7035,
+        "time_marathon_sec": 15081
+      },
+      "hrv": {
+        "last_night_avg": 60,
+        "weekly_avg": 53,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 58,
+        "avg_7day": 56.2
+      },
+      "sleep": {
+        "score": 63,
+        "duration_hours": 6.4,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 27,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-07T06:05:00-04:00"
+    },
+    "2026-04-08": {
+      "vo2max": {
+        "value": 42.1
+      },
+      "race_predictions": {
+        "time_5k_sec": 1484,
+        "time_10k_sec": 3122,
+        "time_half_sec": 7090,
+        "time_marathon_sec": 14930
+      },
+      "hrv": {
+        "last_night_avg": 58,
+        "weekly_avg": 53,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 56.1
+      },
+      "sleep": {
+        "score": 58,
+        "duration_hours": 6.2,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 25,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-08T06:05:00-04:00"
+    },
+    "2026-04-09": {
+      "vo2max": {
+        "value": 42.0
+      },
+      "race_predictions": {
+        "time_5k_sec": 1530,
+        "time_10k_sec": 3139,
+        "time_half_sec": 7104,
+        "time_marathon_sec": 14991
+      },
+      "hrv": {
+        "last_night_avg": 57,
+        "weekly_avg": 53,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 56.1
+      },
+      "sleep": {
+        "score": 92,
+        "duration_hours": 7.3,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 37,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-09T06:05:00-04:00"
+    },
+    "2026-04-10": {
+      "vo2max": {
+        "value": 41.8
+      },
+      "race_predictions": {
+        "time_5k_sec": 1488,
+        "time_10k_sec": 3180,
+        "time_half_sec": 7084,
+        "time_marathon_sec": 14775
+      },
+      "hrv": {
+        "last_night_avg": 51,
+        "weekly_avg": 53,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 56.0
+      },
+      "sleep": {
+        "score": 72,
+        "duration_hours": 7.4,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 17,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-10T06:05:00-04:00"
+    },
+    "2026-04-11": {
+      "vo2max": {
+        "value": 41.9
+      },
+      "race_predictions": {
+        "time_5k_sec": 1495,
+        "time_10k_sec": 3188,
+        "time_half_sec": 6911,
+        "time_marathon_sec": 14725
+      },
+      "hrv": {
+        "last_night_avg": 56,
+        "weekly_avg": 53,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 58,
+        "avg_7day": 55.9
+      },
+      "sleep": {
+        "score": 83,
+        "duration_hours": 6.7,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 22,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-11T06:05:00-04:00"
+    },
+    "2026-04-12": {
+      "vo2max": {
+        "value": 42.2
+      },
+      "race_predictions": {
+        "time_5k_sec": 1566,
+        "time_10k_sec": 3244,
+        "time_half_sec": 7020,
+        "time_marathon_sec": 14691
+      },
+      "hrv": {
+        "last_night_avg": 54,
+        "weekly_avg": 53,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 58,
+        "avg_7day": 55.9
+      },
+      "sleep": {
+        "score": 69,
+        "duration_hours": 7.2,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 30,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-12T06:05:00-04:00"
+    },
+    "2026-04-13": {
+      "vo2max": {
+        "value": 42.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1512,
+        "time_10k_sec": 3195,
+        "time_half_sec": 7113,
+        "time_marathon_sec": 14918
+      },
+      "hrv": {
+        "last_night_avg": 51,
+        "weekly_avg": 53,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 55.8
+      },
+      "sleep": {
+        "score": 77,
+        "duration_hours": 7.3,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 34,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-13T06:05:00-04:00"
+    },
+    "2026-04-14": {
+      "vo2max": {
+        "value": 42.5
+      },
+      "race_predictions": {
+        "time_5k_sec": 1515,
+        "time_10k_sec": 3194,
+        "time_half_sec": 7009,
+        "time_marathon_sec": 15116
+      },
+      "hrv": {
+        "last_night_avg": 62,
+        "weekly_avg": 53,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 57,
+        "avg_7day": 55.8
+      },
+      "sleep": {
+        "score": 74,
+        "duration_hours": 5.6,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 37,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-14T06:05:00-04:00"
+    },
+    "2026-04-15": {
+      "vo2max": {
+        "value": 42.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1499,
+        "time_10k_sec": 3174,
+        "time_half_sec": 7064,
+        "time_marathon_sec": 14585
+      },
+      "hrv": {
+        "last_night_avg": 55,
+        "weekly_avg": 54,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 55.7
+      },
+      "sleep": {
+        "score": 70,
+        "duration_hours": 7.7,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 29,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-15T06:05:00-04:00"
+    },
+    "2026-04-16": {
+      "vo2max": {
+        "value": 42.2
+      },
+      "race_predictions": {
+        "time_5k_sec": 1488,
+        "time_10k_sec": 3283,
+        "time_half_sec": 7012,
+        "time_marathon_sec": 15198
+      },
+      "hrv": {
+        "last_night_avg": 52,
+        "weekly_avg": 54,
+        "status": "LOW"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 55.6
+      },
+      "sleep": {
+        "score": 72,
+        "duration_hours": 7.5,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 31,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-16T06:05:00-04:00"
+    },
+    "2026-04-17": {
+      "vo2max": {
+        "value": 42.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1488,
+        "time_10k_sec": 3149,
+        "time_half_sec": 7080,
+        "time_marathon_sec": 15000
+      },
+      "hrv": {
+        "last_night_avg": 55,
+        "weekly_avg": 54,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 57,
+        "avg_7day": 55.6
+      },
+      "sleep": {
+        "score": 74,
+        "duration_hours": 7.2,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 37,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-17T06:05:00-04:00"
+    },
+    "2026-04-18": {
+      "vo2max": {
+        "value": 42.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1500,
+        "time_10k_sec": 3178,
+        "time_half_sec": 7018,
+        "time_marathon_sec": 14586
+      },
+      "hrv": {
+        "last_night_avg": 47,
+        "weekly_avg": 54,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 58,
+        "avg_7day": 55.5
+      },
+      "sleep": {
+        "score": 71,
+        "duration_hours": 7.8,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 39,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-18T06:05:00-04:00"
+    },
+    "2026-04-19": {
+      "vo2max": {
+        "value": 42.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1501,
+        "time_10k_sec": 3174,
+        "time_half_sec": 6870,
+        "time_marathon_sec": 14488
+      },
+      "hrv": {
+        "last_night_avg": 48,
+        "weekly_avg": 54,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 55.4
+      },
+      "sleep": {
+        "score": 83,
+        "duration_hours": 7.7,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 33,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-19T06:05:00-04:00"
+    },
+    "2026-04-20": {
+      "vo2max": {
+        "value": 42.8
+      },
+      "race_predictions": {
+        "time_5k_sec": 1519,
+        "time_10k_sec": 3169,
+        "time_half_sec": 6996,
+        "time_marathon_sec": 14903
+      },
+      "hrv": {
+        "last_night_avg": 56,
+        "weekly_avg": 54,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 55.4
+      },
+      "sleep": {
+        "score": 80,
+        "duration_hours": 6.5,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 36,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-20T06:05:00-04:00"
+    },
+    "2026-04-21": {
+      "vo2max": {
+        "value": 42.7
+      },
+      "race_predictions": {
+        "time_5k_sec": 1521,
+        "time_10k_sec": 3089,
+        "time_half_sec": 7115,
+        "time_marathon_sec": 14851
+      },
+      "hrv": {
+        "last_night_avg": 44,
+        "weekly_avg": 54,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 55.3
+      },
+      "sleep": {
+        "score": 59,
+        "duration_hours": 8.0,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 40,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-21T06:05:00-04:00"
+    },
+    "2026-04-22": {
+      "vo2max": {
+        "value": 42.0
+      },
+      "race_predictions": {
+        "time_5k_sec": 1445,
+        "time_10k_sec": 3145,
+        "time_half_sec": 7026,
+        "time_marathon_sec": 14618
+      },
+      "hrv": {
+        "last_night_avg": 63,
+        "weekly_avg": 54,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 55.2
+      },
+      "sleep": {
+        "score": 83,
+        "duration_hours": 7.1,
+        "avg_7day_duration_hours": 7.0
+      },
+      "stress": {
+        "avg_stress": 33,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-22T06:05:00-04:00"
+    },
+    "2026-04-23": {
+      "vo2max": {
+        "value": 42.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1512,
+        "time_10k_sec": 3137,
+        "time_half_sec": 6923,
+        "time_marathon_sec": 14792
+      },
+      "hrv": {
+        "last_night_avg": 59,
+        "weekly_avg": 54,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 55.2
+      },
+      "sleep": {
+        "score": 63,
+        "duration_hours": 7.5,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 47,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-23T06:05:00-04:00"
+    },
+    "2026-04-24": {
+      "vo2max": {
+        "value": 43.1
+      },
+      "race_predictions": {
+        "time_5k_sec": 1507,
+        "time_10k_sec": 3162,
+        "time_half_sec": 7131,
+        "time_marathon_sec": 14921
+      },
+      "hrv": {
+        "last_night_avg": 60,
+        "weekly_avg": 54,
+        "status": "LOW"
+      },
+      "rhr": {
+        "value": 57,
+        "avg_7day": 55.1
+      },
+      "sleep": {
+        "score": 91,
+        "duration_hours": 6.4,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 29,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-24T06:05:00-04:00"
+    },
+    "2026-04-25": {
+      "vo2max": {
+        "value": 41.9
+      },
+      "race_predictions": {
+        "time_5k_sec": 1504,
+        "time_10k_sec": 3131,
+        "time_half_sec": 6966,
+        "time_marathon_sec": 14810
+      },
+      "hrv": {
+        "last_night_avg": 43,
+        "weekly_avg": 54,
+        "status": "LOW"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 55.1
+      },
+      "sleep": {
+        "score": 69,
+        "duration_hours": 7.2,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 32,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-25T06:05:00-04:00"
+    },
+    "2026-04-26": {
+      "vo2max": {
+        "value": 42.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1521,
+        "time_10k_sec": 3146,
+        "time_half_sec": 7151,
+        "time_marathon_sec": 14693
+      },
+      "hrv": {
+        "last_night_avg": 57,
+        "weekly_avg": 54,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 55.0
+      },
+      "sleep": {
+        "score": 67,
+        "duration_hours": 7.0,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 14,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-26T06:05:00-04:00"
+    },
+    "2026-04-27": {
+      "vo2max": {
+        "value": 42.1
+      },
+      "race_predictions": {
+        "time_5k_sec": 1512,
+        "time_10k_sec": 3162,
+        "time_half_sec": 6874,
+        "time_marathon_sec": 14769
+      },
+      "hrv": {
+        "last_night_avg": 48,
+        "weekly_avg": 54,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 54.9
+      },
+      "sleep": {
+        "score": 84,
+        "duration_hours": 5.7,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 29,
+        "avg_7day": 29
+      },
+      "synced_at": "2026-04-27T06:05:00-04:00"
+    },
+    "2026-04-28": {
+      "vo2max": {
+        "value": 42.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1523,
+        "time_10k_sec": 3159,
+        "time_half_sec": 7051,
+        "time_marathon_sec": 14665
+      },
+      "hrv": {
+        "last_night_avg": 50,
+        "weekly_avg": 54,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 54.9
+      },
+      "sleep": {
+        "score": 86,
+        "duration_hours": 5.8,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 31,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-04-28T06:05:00-04:00"
+    },
+    "2026-04-29": {
+      "vo2max": {
+        "value": 42.9
+      },
+      "race_predictions": {
+        "time_5k_sec": 1504,
+        "time_10k_sec": 3142,
+        "time_half_sec": 6954,
+        "time_marathon_sec": 15047
+      },
+      "hrv": {
+        "last_night_avg": 43,
+        "weekly_avg": 54,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 54.8
+      },
+      "sleep": {
+        "score": 66,
+        "duration_hours": 6.9,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 22,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-04-29T06:05:00-04:00"
+    },
+    "2026-04-30": {
+      "vo2max": {
+        "value": 42.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1517,
+        "time_10k_sec": 3089,
+        "time_half_sec": 6878,
+        "time_marathon_sec": 14757
+      },
+      "hrv": {
+        "last_night_avg": 65,
+        "weekly_avg": 55,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 54.8
+      },
+      "sleep": {
+        "score": 66,
+        "duration_hours": 6.9,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 36,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-04-30T06:05:00-04:00"
+    },
+    "2026-05-01": {
+      "vo2max": {
+        "value": 42.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1496,
+        "time_10k_sec": 3031,
+        "time_half_sec": 6958,
+        "time_marathon_sec": 14456
+      },
+      "hrv": {
+        "last_night_avg": 68,
+        "weekly_avg": 55,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 54.7
+      },
+      "sleep": {
+        "score": 85,
+        "duration_hours": 7.9,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 32,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-01T06:05:00-04:00"
+    },
+    "2026-05-02": {
+      "vo2max": {
+        "value": 43.2
+      },
+      "race_predictions": {
+        "time_5k_sec": 1465,
+        "time_10k_sec": 3192,
+        "time_half_sec": 6869,
+        "time_marathon_sec": 14654
+      },
+      "hrv": {
+        "last_night_avg": 47,
+        "weekly_avg": 55,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 54.6
+      },
+      "sleep": {
+        "score": 72,
+        "duration_hours": 7.0,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 23,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-02T06:05:00-04:00"
+    },
+    "2026-05-03": {
+      "vo2max": {
+        "value": 43.7
+      },
+      "race_predictions": {
+        "time_5k_sec": 1468,
+        "time_10k_sec": 3111,
+        "time_half_sec": 6981,
+        "time_marathon_sec": 14413
+      },
+      "hrv": {
+        "last_night_avg": 54,
+        "weekly_avg": 55,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 57,
+        "avg_7day": 54.6
+      },
+      "sleep": {
+        "score": 68,
+        "duration_hours": 7.1,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 19,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-03T06:05:00-04:00"
+    },
+    "2026-05-04": {
+      "vo2max": {
+        "value": 43.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1469,
+        "time_10k_sec": 3074,
+        "time_half_sec": 6874,
+        "time_marathon_sec": 14430
+      },
+      "hrv": {
+        "last_night_avg": 49,
+        "weekly_avg": 55,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 54.5
+      },
+      "sleep": {
+        "score": 62,
+        "duration_hours": 7.4,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 14,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-04T06:05:00-04:00"
+    },
+    "2026-05-05": {
+      "vo2max": {
+        "value": 42.8
+      },
+      "race_predictions": {
+        "time_5k_sec": 1456,
+        "time_10k_sec": 3092,
+        "time_half_sec": 6953,
+        "time_marathon_sec": 14450
+      },
+      "hrv": {
+        "last_night_avg": 56,
+        "weekly_avg": 55,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 54.4
+      },
+      "sleep": {
+        "score": 76,
+        "duration_hours": 7.2,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 23,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-05T06:05:00-04:00"
+    },
+    "2026-05-06": {
+      "vo2max": {
+        "value": 43.0
+      },
+      "race_predictions": {
+        "time_5k_sec": 1460,
+        "time_10k_sec": 3037,
+        "time_half_sec": 6810,
+        "time_marathon_sec": 14650
+      },
+      "hrv": {
+        "last_night_avg": 42,
+        "weekly_avg": 55,
+        "status": "LOW"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 54.4
+      },
+      "sleep": {
+        "score": 70,
+        "duration_hours": 7.0,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 22,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-06T06:05:00-04:00"
+    },
+    "2026-05-07": {
+      "vo2max": {
+        "value": 43.0
+      },
+      "race_predictions": {
+        "time_5k_sec": 1475,
+        "time_10k_sec": 3107,
+        "time_half_sec": 6906,
+        "time_marathon_sec": 14613
+      },
+      "hrv": {
+        "last_night_avg": 59,
+        "weekly_avg": 55,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 54.3
+      },
+      "sleep": {
+        "score": 78,
+        "duration_hours": 7.4,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 22,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-07T06:05:00-04:00"
+    },
+    "2026-05-08": {
+      "vo2max": {
+        "value": 43.2
+      },
+      "race_predictions": {
+        "time_5k_sec": 1476,
+        "time_10k_sec": 3081,
+        "time_half_sec": 7124,
+        "time_marathon_sec": 14559
+      },
+      "hrv": {
+        "last_night_avg": 58,
+        "weekly_avg": 55,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 54.2
+      },
+      "sleep": {
+        "score": 77,
+        "duration_hours": 7.3,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 23,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-08T06:05:00-04:00"
+    },
+    "2026-05-09": {
+      "vo2max": {
+        "value": 43.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1472,
+        "time_10k_sec": 3071,
+        "time_half_sec": 6808,
+        "time_marathon_sec": 14782
+      },
+      "hrv": {
+        "last_night_avg": 64,
+        "weekly_avg": 55,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 54.2
+      },
+      "sleep": {
+        "score": 72,
+        "duration_hours": 7.3,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 23,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-09T06:05:00-04:00"
+    },
+    "2026-05-10": {
+      "vo2max": {
+        "value": 43.9
+      },
+      "race_predictions": {
+        "time_5k_sec": 1494,
+        "time_10k_sec": 3082,
+        "time_half_sec": 6794,
+        "time_marathon_sec": 14358
+      },
+      "hrv": {
+        "last_night_avg": 58,
+        "weekly_avg": 55,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 54.1
+      },
+      "sleep": {
+        "score": 64,
+        "duration_hours": 7.4,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 20,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-10T06:05:00-04:00"
+    },
+    "2026-05-11": {
+      "vo2max": {
+        "value": 43.7
+      },
+      "race_predictions": {
+        "time_5k_sec": 1478,
+        "time_10k_sec": 3092,
+        "time_half_sec": 7000,
+        "time_marathon_sec": 14603
+      },
+      "hrv": {
+        "last_night_avg": 52,
+        "weekly_avg": 55,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 54.1
+      },
+      "sleep": {
+        "score": 77,
+        "duration_hours": 8.1,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 32,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-11T06:05:00-04:00"
+    },
+    "2026-05-12": {
+      "vo2max": {
+        "value": 43.7
+      },
+      "race_predictions": {
+        "time_5k_sec": 1451,
+        "time_10k_sec": 3063,
+        "time_half_sec": 7005,
+        "time_marathon_sec": 14768
+      },
+      "hrv": {
+        "last_night_avg": 56,
+        "weekly_avg": 55,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 54.0
+      },
+      "sleep": {
+        "score": 71,
+        "duration_hours": 6.4,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 23,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-12T06:05:00-04:00"
+    },
+    "2026-05-13": {
+      "vo2max": {
+        "value": 43.2
+      },
+      "race_predictions": {
+        "time_5k_sec": 1499,
+        "time_10k_sec": 3057,
+        "time_half_sec": 7050,
+        "time_marathon_sec": 14738
+      },
+      "hrv": {
+        "last_night_avg": 59,
+        "weekly_avg": 56,
+        "status": "LOW"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 53.9
+      },
+      "sleep": {
+        "score": 84,
+        "duration_hours": 8.3,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 34,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-13T06:05:00-04:00"
+    },
+    "2026-05-14": {
+      "vo2max": {
+        "value": 43.5
+      },
+      "race_predictions": {
+        "time_5k_sec": 1477,
+        "time_10k_sec": 3077,
+        "time_half_sec": 6896,
+        "time_marathon_sec": 14592
+      },
+      "hrv": {
+        "last_night_avg": 55,
+        "weekly_avg": 56,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 53.9
+      },
+      "sleep": {
+        "score": 81,
+        "duration_hours": 6.9,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 26,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-14T06:05:00-04:00"
+    },
+    "2026-05-15": {
+      "vo2max": {
+        "value": 43.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1483,
+        "time_10k_sec": 3097,
+        "time_half_sec": 6763,
+        "time_marathon_sec": 14637
+      },
+      "hrv": {
+        "last_night_avg": 55,
+        "weekly_avg": 56,
+        "status": "LOW"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 53.8
+      },
+      "sleep": {
+        "score": 77,
+        "duration_hours": 7.5,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 8,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-15T06:05:00-04:00"
+    },
+    "2026-05-16": {
+      "vo2max": {
+        "value": 44.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1441,
+        "time_10k_sec": 3089,
+        "time_half_sec": 6929,
+        "time_marathon_sec": 14407
+      },
+      "hrv": {
+        "last_night_avg": 56,
+        "weekly_avg": 56,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 53.8
+      },
+      "sleep": {
+        "score": 78,
+        "duration_hours": 7.1,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 31,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-16T06:05:00-04:00"
+    },
+    "2026-05-17": {
+      "vo2max": {
+        "value": 43.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1453,
+        "time_10k_sec": 3088,
+        "time_half_sec": 6990,
+        "time_marathon_sec": 14485
+      },
+      "hrv": {
+        "last_night_avg": 41,
+        "weekly_avg": 56,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 53.7
+      },
+      "sleep": {
+        "score": 77,
+        "duration_hours": 6.3,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 20,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-17T06:05:00-04:00"
+    },
+    "2026-05-18": {
+      "vo2max": {
+        "value": 43.9
+      },
+      "race_predictions": {
+        "time_5k_sec": 1479,
+        "time_10k_sec": 3114,
+        "time_half_sec": 6726,
+        "time_marathon_sec": 14202
+      },
+      "hrv": {
+        "last_night_avg": 53,
+        "weekly_avg": 56,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 53.6
+      },
+      "sleep": {
+        "score": 78,
+        "duration_hours": 7.4,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 20,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-18T06:05:00-04:00"
+    },
+    "2026-05-19": {
+      "vo2max": {
+        "value": 43.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1454,
+        "time_10k_sec": 2998,
+        "time_half_sec": 6785,
+        "time_marathon_sec": 14517
+      },
+      "hrv": {
+        "last_night_avg": 61,
+        "weekly_avg": 56,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 53.6
+      },
+      "sleep": {
+        "score": 95,
+        "duration_hours": 6.8,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 29,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-19T06:05:00-04:00"
+    },
+    "2026-05-20": {
+      "vo2max": {
+        "value": 44.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1446,
+        "time_10k_sec": 3035,
+        "time_half_sec": 7026,
+        "time_marathon_sec": 14344
+      },
+      "hrv": {
+        "last_night_avg": 61,
+        "weekly_avg": 56,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 52,
+        "avg_7day": 53.5
+      },
+      "sleep": {
+        "score": 43,
+        "duration_hours": 6.7,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 28,
+        "avg_7day": 28
+      },
+      "synced_at": "2026-05-20T06:05:00-04:00"
+    },
+    "2026-05-21": {
+      "vo2max": {
+        "value": 44.1
+      },
+      "race_predictions": {
+        "time_5k_sec": 1492,
+        "time_10k_sec": 3054,
+        "time_half_sec": 6793,
+        "time_marathon_sec": 14775
+      },
+      "hrv": {
+        "last_night_avg": 50,
+        "weekly_avg": 56,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 52,
+        "avg_7day": 53.4
+      },
+      "sleep": {
+        "score": 78,
+        "duration_hours": 5.7,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 37,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-05-21T06:05:00-04:00"
+    },
+    "2026-05-22": {
+      "vo2max": {
+        "value": 43.5
+      },
+      "race_predictions": {
+        "time_5k_sec": 1467,
+        "time_10k_sec": 3112,
+        "time_half_sec": 6729,
+        "time_marathon_sec": 14547
+      },
+      "hrv": {
+        "last_night_avg": 55,
+        "weekly_avg": 56,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 53.4
+      },
+      "sleep": {
+        "score": 74,
+        "duration_hours": 7.5,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 40,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-05-22T06:05:00-04:00"
+    },
+    "2026-05-23": {
+      "vo2max": {
+        "value": 43.8
+      },
+      "race_predictions": {
+        "time_5k_sec": 1478,
+        "time_10k_sec": 3116,
+        "time_half_sec": 6893,
+        "time_marathon_sec": 14481
+      },
+      "hrv": {
+        "last_night_avg": 68,
+        "weekly_avg": 56,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 53.3
+      },
+      "sleep": {
+        "score": 70,
+        "duration_hours": 5.6,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 31,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-05-23T06:05:00-04:00"
+    },
+    "2026-05-24": {
+      "vo2max": {
+        "value": 44.1
+      },
+      "race_predictions": {
+        "time_5k_sec": 1490,
+        "time_10k_sec": 3071,
+        "time_half_sec": 6759,
+        "time_marathon_sec": 14582
+      },
+      "hrv": {
+        "last_night_avg": 54,
+        "weekly_avg": 56,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 52,
+        "avg_7day": 53.2
+      },
+      "sleep": {
+        "score": 95,
+        "duration_hours": 6.5,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 34,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-05-24T06:05:00-04:00"
+    },
+    "2026-05-25": {
+      "vo2max": {
+        "value": 43.7
+      },
+      "race_predictions": {
+        "time_5k_sec": 1440,
+        "time_10k_sec": 3136,
+        "time_half_sec": 6797,
+        "time_marathon_sec": 14517
+      },
+      "hrv": {
+        "last_night_avg": 55,
+        "weekly_avg": 56,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 53.2
+      },
+      "sleep": {
+        "score": 55,
+        "duration_hours": 6.4,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 38,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-05-25T06:05:00-04:00"
+    },
+    "2026-05-26": {
+      "vo2max": {
+        "value": 43.8
+      },
+      "race_predictions": {
+        "time_5k_sec": 1448,
+        "time_10k_sec": 3075,
+        "time_half_sec": 6881,
+        "time_marathon_sec": 14523
+      },
+      "hrv": {
+        "last_night_avg": 49,
+        "weekly_avg": 56,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 53.1
+      },
+      "sleep": {
+        "score": 76,
+        "duration_hours": 7.0,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 25,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-05-26T06:05:00-04:00"
+    },
+    "2026-05-27": {
+      "vo2max": {
+        "value": 43.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1451,
+        "time_10k_sec": 3001,
+        "time_half_sec": 6808,
+        "time_marathon_sec": 14350
+      },
+      "hrv": {
+        "last_night_avg": 63,
+        "weekly_avg": 56,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 53.1
+      },
+      "sleep": {
+        "score": 86,
+        "duration_hours": 6.4,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 44,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-05-27T06:05:00-04:00"
+    },
+    "2026-05-28": {
+      "vo2max": {
+        "value": 44.7
+      },
+      "race_predictions": {
+        "time_5k_sec": 1443,
+        "time_10k_sec": 3045,
+        "time_half_sec": 6712,
+        "time_marathon_sec": 14368
+      },
+      "hrv": {
+        "last_night_avg": 61,
+        "weekly_avg": 57,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 53.0
+      },
+      "sleep": {
+        "score": 63,
+        "duration_hours": 6.7,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 18,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-05-28T06:05:00-04:00"
+    },
+    "2026-05-29": {
+      "vo2max": {
+        "value": 44.5
+      },
+      "race_predictions": {
+        "time_5k_sec": 1436,
+        "time_10k_sec": 3051,
+        "time_half_sec": 6843,
+        "time_marathon_sec": 14473
+      },
+      "hrv": {
+        "last_night_avg": 64,
+        "weekly_avg": 57,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 51,
+        "avg_7day": 52.9
+      },
+      "sleep": {
+        "score": 64,
+        "duration_hours": 7.3,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 28,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-05-29T06:05:00-04:00"
+    },
+    "2026-05-30": {
+      "vo2max": {
+        "value": 44.0
+      },
+      "race_predictions": {
+        "time_5k_sec": 1440,
+        "time_10k_sec": 3052,
+        "time_half_sec": 6883,
+        "time_marathon_sec": 14691
+      },
+      "hrv": {
+        "last_night_avg": 47,
+        "weekly_avg": 57,
+        "status": "LOW"
+      },
+      "rhr": {
+        "value": 52,
+        "avg_7day": 52.9
+      },
+      "sleep": {
+        "score": 70,
+        "duration_hours": 7.1,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 17,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-05-30T06:05:00-04:00"
+    },
+    "2026-05-31": {
+      "vo2max": {
+        "value": 44.2
+      },
+      "race_predictions": {
+        "time_5k_sec": 1469,
+        "time_10k_sec": 3034,
+        "time_half_sec": 6699,
+        "time_marathon_sec": 14623
+      },
+      "hrv": {
+        "last_night_avg": 60,
+        "weekly_avg": 57,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 49,
+        "avg_7day": 52.8
+      },
+      "sleep": {
+        "score": 73,
+        "duration_hours": 7.0,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 33,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-05-31T06:05:00-04:00"
+    },
+    "2026-06-01": {
+      "vo2max": {
+        "value": 44.0
+      },
+      "race_predictions": {
+        "time_5k_sec": 1415,
+        "time_10k_sec": 2942,
+        "time_half_sec": 6751,
+        "time_marathon_sec": 14154
+      },
+      "hrv": {
+        "last_night_avg": 47,
+        "weekly_avg": 57,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 52.8
+      },
+      "sleep": {
+        "score": 72,
+        "duration_hours": 6.9,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 27,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-06-01T06:05:00-04:00"
+    },
+    "2026-06-02": {
+      "vo2max": {
+        "value": 44.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1422,
+        "time_10k_sec": 3008,
+        "time_half_sec": 6794,
+        "time_marathon_sec": 14328
+      },
+      "hrv": {
+        "last_night_avg": 56,
+        "weekly_avg": 57,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 49,
+        "avg_7day": 52.7
+      },
+      "sleep": {
+        "score": 87,
+        "duration_hours": 7.3,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 35,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-06-02T06:05:00-04:00"
+    },
+    "2026-06-03": {
+      "vo2max": {
+        "value": 44.3
+      },
+      "race_predictions": {
+        "time_5k_sec": 1451,
+        "time_10k_sec": 3051,
+        "time_half_sec": 6779,
+        "time_marathon_sec": 14215
+      },
+      "hrv": {
+        "last_night_avg": 62,
+        "weekly_avg": 57,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 52,
+        "avg_7day": 52.6
+      },
+      "sleep": {
+        "score": 92,
+        "duration_hours": 7.5,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 13,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-06-03T06:05:00-04:00"
+    },
+    "2026-06-04": {
+      "vo2max": {
+        "value": 44.3
+      },
+      "race_predictions": {
+        "time_5k_sec": 1446,
+        "time_10k_sec": 3030,
+        "time_half_sec": 6896,
+        "time_marathon_sec": 14351
+      },
+      "hrv": {
+        "last_night_avg": 61,
+        "weekly_avg": 57,
+        "status": "LOW"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 52.6
+      },
+      "sleep": {
+        "score": 72,
+        "duration_hours": 6.7,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 20,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-06-04T06:05:00-04:00"
+    },
+    "2026-06-05": {
+      "vo2max": {
+        "value": 44.0
+      },
+      "race_predictions": {
+        "time_5k_sec": 1429,
+        "time_10k_sec": 3075,
+        "time_half_sec": 6680,
+        "time_marathon_sec": 14207
+      },
+      "hrv": {
+        "last_night_avg": 42,
+        "weekly_avg": 57,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 56,
+        "avg_7day": 52.5
+      },
+      "sleep": {
+        "score": 60,
+        "duration_hours": 7.3,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 12,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-06-05T06:05:00-04:00"
+    },
+    "2026-06-06": {
+      "vo2max": {
+        "value": 44.5
+      },
+      "race_predictions": {
+        "time_5k_sec": 1468,
+        "time_10k_sec": 3057,
+        "time_half_sec": 6665,
+        "time_marathon_sec": 14219
+      },
+      "hrv": {
+        "last_night_avg": 65,
+        "weekly_avg": 57,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 52.4
+      },
+      "sleep": {
+        "score": 72,
+        "duration_hours": 6.7,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 22,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-06-06T06:05:00-04:00"
+    },
+    "2026-06-07": {
+      "vo2max": {
+        "value": 43.8
+      },
+      "race_predictions": {
+        "time_5k_sec": 1437,
+        "time_10k_sec": 2980,
+        "time_half_sec": 6620,
+        "time_marathon_sec": 14511
+      },
+      "hrv": {
+        "last_night_avg": 58,
+        "weekly_avg": 57,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 52.4
+      },
+      "sleep": {
+        "score": 95,
+        "duration_hours": 7.2,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 25,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-06-07T06:05:00-04:00"
+    },
+    "2026-06-08": {
+      "vo2max": {
+        "value": 44.3
+      },
+      "race_predictions": {
+        "time_5k_sec": 1458,
+        "time_10k_sec": 2951,
+        "time_half_sec": 6610,
+        "time_marathon_sec": 14407
+      },
+      "hrv": {
+        "last_night_avg": 65,
+        "weekly_avg": 57,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 52,
+        "avg_7day": 52.3
+      },
+      "sleep": {
+        "score": 75,
+        "duration_hours": 8.1,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 36,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-06-08T06:05:00-04:00"
+    },
+    "2026-06-09": {
+      "vo2max": {
+        "value": 44.7
+      },
+      "race_predictions": {
+        "time_5k_sec": 1433,
+        "time_10k_sec": 2965,
+        "time_half_sec": 6790,
+        "time_marathon_sec": 14355
+      },
+      "hrv": {
+        "last_night_avg": 62,
+        "weekly_avg": 57,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 55,
+        "avg_7day": 52.2
+      },
+      "sleep": {
+        "score": 91,
+        "duration_hours": 7.0,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 28,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-06-09T06:05:00-04:00"
+    },
+    "2026-06-10": {
+      "vo2max": {
+        "value": 44.8
+      },
+      "race_predictions": {
+        "time_5k_sec": 1439,
+        "time_10k_sec": 2983,
+        "time_half_sec": 6971,
+        "time_marathon_sec": 14188
+      },
+      "hrv": {
+        "last_night_avg": 66,
+        "weekly_avg": 58,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 52.2
+      },
+      "sleep": {
+        "score": 89,
+        "duration_hours": 7.2,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 22,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-06-10T06:05:00-04:00"
+    },
+    "2026-06-11": {
+      "vo2max": {
+        "value": 44.5
+      },
+      "race_predictions": {
+        "time_5k_sec": 1437,
+        "time_10k_sec": 3028,
+        "time_half_sec": 6799,
+        "time_marathon_sec": 14242
+      },
+      "hrv": {
+        "last_night_avg": 59,
+        "weekly_avg": 58,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 52.1
+      },
+      "sleep": {
+        "score": 95,
+        "duration_hours": 6.5,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 25,
+        "avg_7day": 27
+      },
+      "synced_at": "2026-06-11T06:05:00-04:00"
+    },
+    "2026-06-12": {
+      "vo2max": {
+        "value": 45.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1421,
+        "time_10k_sec": 3044,
+        "time_half_sec": 6856,
+        "time_marathon_sec": 13984
+      },
+      "hrv": {
+        "last_night_avg": 54,
+        "weekly_avg": 58,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 52,
+        "avg_7day": 52.1
+      },
+      "sleep": {
+        "score": 75,
+        "duration_hours": 7.4,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 16,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-12T06:05:00-04:00"
+    },
+    "2026-06-13": {
+      "vo2max": {
+        "value": 44.2
+      },
+      "race_predictions": {
+        "time_5k_sec": 1445,
+        "time_10k_sec": 3039,
+        "time_half_sec": 6758,
+        "time_marathon_sec": 14440
+      },
+      "hrv": {
+        "last_night_avg": 61,
+        "weekly_avg": 58,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 51,
+        "avg_7day": 52.0
+      },
+      "sleep": {
+        "score": 66,
+        "duration_hours": 6.6,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 31,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-13T06:05:00-04:00"
+    },
+    "2026-06-14": {
+      "vo2max": {
+        "value": 44.8
+      },
+      "race_predictions": {
+        "time_5k_sec": 1472,
+        "time_10k_sec": 3051,
+        "time_half_sec": 6779,
+        "time_marathon_sec": 14465
+      },
+      "hrv": {
+        "last_night_avg": 63,
+        "weekly_avg": 58,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 52,
+        "avg_7day": 51.9
+      },
+      "sleep": {
+        "score": 84,
+        "duration_hours": 6.6,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 27,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-14T06:05:00-04:00"
+    },
+    "2026-06-15": {
+      "vo2max": {
+        "value": 44.8
+      },
+      "race_predictions": {
+        "time_5k_sec": 1420,
+        "time_10k_sec": 3030,
+        "time_half_sec": 6808,
+        "time_marathon_sec": 14367
+      },
+      "hrv": {
+        "last_night_avg": 62,
+        "weekly_avg": 58,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 51,
+        "avg_7day": 51.9
+      },
+      "sleep": {
+        "score": 85,
+        "duration_hours": 6.2,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 33,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-15T06:05:00-04:00"
+    },
+    "2026-06-16": {
+      "vo2max": {
+        "value": 44.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1441,
+        "time_10k_sec": 3008,
+        "time_half_sec": 6631,
+        "time_marathon_sec": 14272
+      },
+      "hrv": {
+        "last_night_avg": 56,
+        "weekly_avg": 58,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 51,
+        "avg_7day": 51.8
+      },
+      "sleep": {
+        "score": 73,
+        "duration_hours": 7.5,
+        "avg_7day_duration_hours": 7.1
+      },
+      "stress": {
+        "avg_stress": 22,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-16T06:05:00-04:00"
+    },
+    "2026-06-17": {
+      "vo2max": {
+        "value": 44.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1461,
+        "time_10k_sec": 2954,
+        "time_half_sec": 6687,
+        "time_marathon_sec": 13987
+      },
+      "hrv": {
+        "last_night_avg": 54,
+        "weekly_avg": 58,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 52,
+        "avg_7day": 51.8
+      },
+      "sleep": {
+        "score": 73,
+        "duration_hours": 6.9,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 23,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-17T06:05:00-04:00"
+    },
+    "2026-06-18": {
+      "vo2max": {
+        "value": 44.2
+      },
+      "race_predictions": {
+        "time_5k_sec": 1437,
+        "time_10k_sec": 3056,
+        "time_half_sec": 6955,
+        "time_marathon_sec": 14051
+      },
+      "hrv": {
+        "last_night_avg": 62,
+        "weekly_avg": 58,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 51.7
+      },
+      "sleep": {
+        "score": 70,
+        "duration_hours": 6.5,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 9,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-18T06:05:00-04:00"
+    },
+    "2026-06-19": {
+      "vo2max": {
+        "value": 45.0
+      },
+      "race_predictions": {
+        "time_5k_sec": 1474,
+        "time_10k_sec": 2947,
+        "time_half_sec": 6740,
+        "time_marathon_sec": 14186
+      },
+      "hrv": {
+        "last_night_avg": 61,
+        "weekly_avg": 58,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 48,
+        "avg_7day": 51.6
+      },
+      "sleep": {
+        "score": 68,
+        "duration_hours": 7.0,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 19,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-19T06:05:00-04:00"
+    },
+    "2026-06-20": {
+      "vo2max": {
+        "value": 44.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1430,
+        "time_10k_sec": 2960,
+        "time_half_sec": 6693,
+        "time_marathon_sec": 14477
+      },
+      "hrv": {
+        "last_night_avg": 64,
+        "weekly_avg": 58,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 51,
+        "avg_7day": 51.6
+      },
+      "sleep": {
+        "score": 79,
+        "duration_hours": 8.9,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 24,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-20T06:05:00-04:00"
+    },
+    "2026-06-21": {
+      "vo2max": {
+        "value": 45.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1424,
+        "time_10k_sec": 2955,
+        "time_half_sec": 6762,
+        "time_marathon_sec": 14307
+      },
+      "hrv": {
+        "last_night_avg": 58,
+        "weekly_avg": 58,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 51,
+        "avg_7day": 51.5
+      },
+      "sleep": {
+        "score": 85,
+        "duration_hours": 7.2,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 32,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-21T06:05:00-04:00"
+    },
+    "2026-06-22": {
+      "vo2max": {
+        "value": 45.5
+      },
+      "race_predictions": {
+        "time_5k_sec": 1423,
+        "time_10k_sec": 3046,
+        "time_half_sec": 6824,
+        "time_marathon_sec": 14162
+      },
+      "hrv": {
+        "last_night_avg": 53,
+        "weekly_avg": 58,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 54,
+        "avg_7day": 51.4
+      },
+      "sleep": {
+        "score": 59,
+        "duration_hours": 7.4,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 5,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-22T06:05:00-04:00"
+    },
+    "2026-06-23": {
+      "vo2max": {
+        "value": 45.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1430,
+        "time_10k_sec": 2974,
+        "time_half_sec": 6717,
+        "time_marathon_sec": 14031
+      },
+      "hrv": {
+        "last_night_avg": 59,
+        "weekly_avg": 58,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 52,
+        "avg_7day": 51.4
+      },
+      "sleep": {
+        "score": 80,
+        "duration_hours": 7.6,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 29,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-23T06:05:00-04:00"
+    },
+    "2026-06-24": {
+      "vo2max": {
+        "value": 45.1
+      },
+      "race_predictions": {
+        "time_5k_sec": 1386,
+        "time_10k_sec": 2915,
+        "time_half_sec": 6564,
+        "time_marathon_sec": 14066
+      },
+      "hrv": {
+        "last_night_avg": 56,
+        "weekly_avg": 58,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 49,
+        "avg_7day": 51.3
+      },
+      "sleep": {
+        "score": 85,
+        "duration_hours": 6.6,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 25,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-24T06:05:00-04:00"
+    },
+    "2026-06-25": {
+      "vo2max": {
+        "value": 44.9
+      },
+      "race_predictions": {
+        "time_5k_sec": 1453,
+        "time_10k_sec": 2925,
+        "time_half_sec": 6645,
+        "time_marathon_sec": 14071
+      },
+      "hrv": {
+        "last_night_avg": 65,
+        "weekly_avg": 59,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 51,
+        "avg_7day": 51.2
+      },
+      "sleep": {
+        "score": 73,
+        "duration_hours": 7.3,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 28,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-25T06:05:00-04:00"
+    },
+    "2026-06-26": {
+      "vo2max": {
+        "value": 45.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1409,
+        "time_10k_sec": 2979,
+        "time_half_sec": 6559,
+        "time_marathon_sec": 14094
+      },
+      "hrv": {
+        "last_night_avg": 61,
+        "weekly_avg": 59,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 51.2
+      },
+      "sleep": {
+        "score": 74,
+        "duration_hours": 8.7,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 15,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-26T06:05:00-04:00"
+    },
+    "2026-06-27": {
+      "vo2max": {
+        "value": 45.2
+      },
+      "race_predictions": {
+        "time_5k_sec": 1400,
+        "time_10k_sec": 2933,
+        "time_half_sec": 6685,
+        "time_marathon_sec": 14417
+      },
+      "hrv": {
+        "last_night_avg": 58,
+        "weekly_avg": 59,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 50,
+        "avg_7day": 51.1
+      },
+      "sleep": {
+        "score": 85,
+        "duration_hours": 7.3,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 21,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-27T06:05:00-04:00"
+    },
+    "2026-06-28": {
+      "vo2max": {
+        "value": 45.2
+      },
+      "race_predictions": {
+        "time_5k_sec": 1433,
+        "time_10k_sec": 2981,
+        "time_half_sec": 6872,
+        "time_marathon_sec": 14282
+      },
+      "hrv": {
+        "last_night_avg": 63,
+        "weekly_avg": 59,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 50,
+        "avg_7day": 51.1
+      },
+      "sleep": {
+        "score": 77,
+        "duration_hours": 7.5,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 37,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-28T06:05:00-04:00"
+    },
+    "2026-06-29": {
+      "vo2max": {
+        "value": 45.2
+      },
+      "race_predictions": {
+        "time_5k_sec": 1405,
+        "time_10k_sec": 3015,
+        "time_half_sec": 6809,
+        "time_marathon_sec": 14231
+      },
+      "hrv": {
+        "last_night_avg": 57,
+        "weekly_avg": 59,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 50,
+        "avg_7day": 51.0
+      },
+      "sleep": {
+        "score": 90,
+        "duration_hours": 7.5,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 33,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-29T06:05:00-04:00"
+    },
+    "2026-06-30": {
+      "vo2max": {
+        "value": 45.3
+      },
+      "race_predictions": {
+        "time_5k_sec": 1402,
+        "time_10k_sec": 2954,
+        "time_half_sec": 6554,
+        "time_marathon_sec": 13928
+      },
+      "hrv": {
+        "last_night_avg": 47,
+        "weekly_avg": 59,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 49,
+        "avg_7day": 50.9
+      },
+      "sleep": {
+        "score": 70,
+        "duration_hours": 7.0,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 29,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-06-30T06:05:00-04:00"
+    },
+    "2026-07-01": {
+      "vo2max": {
+        "value": 45.5
+      },
+      "race_predictions": {
+        "time_5k_sec": 1371,
+        "time_10k_sec": 2890,
+        "time_half_sec": 6621,
+        "time_marathon_sec": 14168
+      },
+      "hrv": {
+        "last_night_avg": 56,
+        "weekly_avg": 59,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 49,
+        "avg_7day": 50.9
+      },
+      "sleep": {
+        "score": 95,
+        "duration_hours": 6.8,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 22,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-07-01T06:05:00-04:00"
+    },
+    "2026-07-02": {
+      "vo2max": {
+        "value": 45.9
+      },
+      "race_predictions": {
+        "time_5k_sec": 1430,
+        "time_10k_sec": 2964,
+        "time_half_sec": 6381,
+        "time_marathon_sec": 13864
+      },
+      "hrv": {
+        "last_night_avg": 57,
+        "weekly_avg": 59,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 51,
+        "avg_7day": 50.8
+      },
+      "sleep": {
+        "score": 89,
+        "duration_hours": 7.8,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 17,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-07-02T06:05:00-04:00"
+    },
+    "2026-07-03": {
+      "vo2max": {
+        "value": 45.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1414,
+        "time_10k_sec": 2941,
+        "time_half_sec": 6511,
+        "time_marathon_sec": 14148
+      },
+      "hrv": {
+        "last_night_avg": 58,
+        "weekly_avg": 59,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 49,
+        "avg_7day": 50.8
+      },
+      "sleep": {
+        "score": 84,
+        "duration_hours": 7.5,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 25,
+        "avg_7day": 26
+      },
+      "synced_at": "2026-07-03T06:05:00-04:00"
+    },
+    "2026-07-04": {
+      "vo2max": {
+        "value": 46.0
+      },
+      "race_predictions": {
+        "time_5k_sec": 1436,
+        "time_10k_sec": 2970,
+        "time_half_sec": 6717,
+        "time_marathon_sec": 14145
+      },
+      "hrv": {
+        "last_night_avg": 71,
+        "weekly_avg": 59,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 50,
+        "avg_7day": 50.7
+      },
+      "sleep": {
+        "score": 75,
+        "duration_hours": 6.4,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 31,
+        "avg_7day": 25
+      },
+      "synced_at": "2026-07-04T06:05:00-04:00"
+    },
+    "2026-07-05": {
+      "vo2max": {
+        "value": 46.0
+      },
+      "race_predictions": {
+        "time_5k_sec": 1399,
+        "time_10k_sec": 2985,
+        "time_half_sec": 6646,
+        "time_marathon_sec": 14168
+      },
+      "hrv": {
+        "last_night_avg": 54,
+        "weekly_avg": 59,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 53,
+        "avg_7day": 50.6
+      },
+      "sleep": {
+        "score": 80,
+        "duration_hours": 7.5,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 25,
+        "avg_7day": 25
+      },
+      "synced_at": "2026-07-05T06:05:00-04:00"
+    },
+    "2026-07-06": {
+      "vo2max": {
+        "value": 46.4
+      },
+      "race_predictions": {
+        "time_5k_sec": 1402,
+        "time_10k_sec": 2920,
+        "time_half_sec": 6643,
+        "time_marathon_sec": 13911
+      },
+      "hrv": {
+        "last_night_avg": 65,
+        "weekly_avg": 59,
+        "status": "LOW"
+      },
+      "rhr": {
+        "value": 50,
+        "avg_7day": 50.6
+      },
+      "sleep": {
+        "score": 82,
+        "duration_hours": 7.5,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 19,
+        "avg_7day": 25
+      },
+      "synced_at": "2026-07-06T06:05:00-04:00"
+    },
+    "2026-07-07": {
+      "vo2max": {
+        "value": 45.9
+      },
+      "race_predictions": {
+        "time_5k_sec": 1396,
+        "time_10k_sec": 2879,
+        "time_half_sec": 6651,
+        "time_marathon_sec": 14128
+      },
+      "hrv": {
+        "last_night_avg": 61,
+        "weekly_avg": 59,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 50,
+        "avg_7day": 50.5
+      },
+      "sleep": {
+        "score": 59,
+        "duration_hours": 7.5,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 15,
+        "avg_7day": 25
+      },
+      "synced_at": "2026-07-07T06:05:00-04:00"
+    },
+    "2026-07-08": {
+      "vo2max": {
+        "value": 45.5
+      },
+      "race_predictions": {
+        "time_5k_sec": 1392,
+        "time_10k_sec": 2930,
+        "time_half_sec": 6380,
+        "time_marathon_sec": 14307
+      },
+      "hrv": {
+        "last_night_avg": 62,
+        "weekly_avg": 60,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 49,
+        "avg_7day": 50.4
+      },
+      "sleep": {
+        "score": 65,
+        "duration_hours": 6.5,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 26,
+        "avg_7day": 25
+      },
+      "synced_at": "2026-07-08T06:05:00-04:00"
+    },
+    "2026-07-09": {
+      "vo2max": {
+        "value": 45.6
+      },
+      "race_predictions": {
+        "time_5k_sec": 1411,
+        "time_10k_sec": 2959,
+        "time_half_sec": 6504,
+        "time_marathon_sec": 14081
+      },
+      "hrv": {
+        "last_night_avg": 63,
+        "weekly_avg": 60,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 51,
+        "avg_7day": 50.4
+      },
+      "sleep": {
+        "score": 72,
+        "duration_hours": 7.7,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 12,
+        "avg_7day": 25
+      },
+      "synced_at": "2026-07-09T06:05:00-04:00"
+    },
+    "2026-07-10": {
+      "vo2max": {
+        "value": 46.1
+      },
+      "race_predictions": {
+        "time_5k_sec": 1380,
+        "time_10k_sec": 2922,
+        "time_half_sec": 6589,
+        "time_marathon_sec": 13685
+      },
+      "hrv": {
+        "last_night_avg": 61,
+        "weekly_avg": 60,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 49,
+        "avg_7day": 50.3
+      },
+      "sleep": {
+        "score": 82,
+        "duration_hours": 7.7,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 32,
+        "avg_7day": 25
+      },
+      "synced_at": "2026-07-10T06:05:00-04:00"
+    },
+    "2026-07-11": {
+      "vo2max": {
+        "value": 46.0
+      },
+      "race_predictions": {
+        "time_5k_sec": 1385,
+        "time_10k_sec": 3003,
+        "time_half_sec": 6601,
+        "time_marathon_sec": 14039
+      },
+      "hrv": {
+        "last_night_avg": 71,
+        "weekly_avg": 60,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 50,
+        "avg_7day": 50.2
+      },
+      "sleep": {
+        "score": 60,
+        "duration_hours": 7.2,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 33,
+        "avg_7day": 25
+      },
+      "synced_at": "2026-07-11T06:05:00-04:00"
+    },
+    "2026-07-12": {
+      "vo2max": {
+        "value": 45.7
+      },
+      "race_predictions": {
+        "time_5k_sec": 1398,
+        "time_10k_sec": 2886,
+        "time_half_sec": 6662,
+        "time_marathon_sec": 14113
+      },
+      "hrv": {
+        "last_night_avg": 55,
+        "weekly_avg": 60,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 50,
+        "avg_7day": 50.2
+      },
+      "sleep": {
+        "score": 83,
+        "duration_hours": 6.7,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 31,
+        "avg_7day": 25
+      },
+      "synced_at": "2026-07-12T06:05:00-04:00"
+    },
+    "2026-07-13": {
+      "vo2max": {
+        "value": 45.7
+      },
+      "race_predictions": {
+        "time_5k_sec": 1420,
+        "time_10k_sec": 2896,
+        "time_half_sec": 6464,
+        "time_marathon_sec": 13886
+      },
+      "hrv": {
+        "last_night_avg": 63,
+        "weekly_avg": 60,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 50,
+        "avg_7day": 50.1
+      },
+      "sleep": {
+        "score": 73,
+        "duration_hours": 6.5,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 20,
+        "avg_7day": 25
+      },
+      "synced_at": "2026-07-13T06:05:00-04:00"
+    },
+    "2026-07-14": {
+      "vo2max": {
+        "value": 46.2
+      },
+      "race_predictions": {
+        "time_5k_sec": 1382,
+        "time_10k_sec": 2964,
+        "time_half_sec": 6476,
+        "time_marathon_sec": 13823
+      },
+      "hrv": {
+        "last_night_avg": 62,
+        "weekly_avg": 60,
+        "status": "BALANCED"
+      },
+      "rhr": {
+        "value": 49,
+        "avg_7day": 50.1
+      },
+      "sleep": {
+        "score": 74,
+        "duration_hours": 6.7,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 32,
+        "avg_7day": 25
+      },
+      "synced_at": "2026-07-14T06:05:00-04:00"
+    },
+    "2026-07-15": {
+      "vo2max": {
+        "value": 46.1
+      },
+      "race_predictions": {
+        "time_5k_sec": 1382,
+        "time_10k_sec": 2958,
+        "time_half_sec": 6612,
+        "time_marathon_sec": 13982
+      },
+      "hrv": {
+        "last_night_avg": 58,
+        "weekly_avg": 60,
+        "status": "UNBALANCED"
+      },
+      "rhr": {
+        "value": 50,
+        "avg_7day": 50.0
+      },
+      "sleep": {
+        "score": 81,
+        "duration_hours": 7.0,
+        "avg_7day_duration_hours": 7.2
+      },
+      "stress": {
+        "avg_stress": 24,
+        "avg_7day": 25
+      },
+      "synced_at": "2026-07-15T06:05:00-04:00"
+    }
+  },
+  "activities": {
+    "900000000001": {
+      "activity_id": 900000000001,
+      "date": "2026-03-27",
+      "start_time_local": "2026-03-27T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 3.69,
+      "duration_min": 22.7,
+      "avg_pace_min_per_km": 6.15,
+      "avg_hr": 139,
+      "max_hr": 157,
+      "total_ascent_m": 72,
+      "cadence_spm": 176,
+      "best_efforts": {
+        "1k": 354.2,
+        "3k": 1062.7
+      },
+      "weather": {
+        "temp_c": 15.6,
+        "humidity_pct": 67
+      },
+      "hr_zones": {
+        "zone_1": 204.3,
+        "zone_2": 749.1,
+        "zone_3": 340.5,
+        "zone_4": 54.5,
+        "zone_5": 13.6
+      }
+    },
+    "900000000002": {
+      "activity_id": 900000000002,
+      "date": "2026-03-28",
+      "start_time_local": "2026-03-28T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 4.15,
+      "duration_min": 24.3,
+      "avg_pace_min_per_km": 5.85,
+      "avg_hr": 136,
+      "max_hr": 151,
+      "total_ascent_m": 100,
+      "cadence_spm": 172,
+      "best_efforts": {
+        "1k": 337.0,
+        "3k": 1010.9
+      },
+      "weather": {
+        "temp_c": 25.7,
+        "humidity_pct": 24
+      },
+      "hr_zones": {
+        "zone_1": 218.7,
+        "zone_2": 801.9,
+        "zone_3": 364.5,
+        "zone_4": 58.3,
+        "zone_5": 14.6
+      }
+    },
+    "900000000003": {
+      "activity_id": 900000000003,
+      "date": "2026-03-29",
+      "start_time_local": "2026-03-29T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 2.52,
+      "duration_min": 12.8,
+      "avg_pace_min_per_km": 5.08,
+      "avg_hr": 172,
+      "max_hr": 190,
+      "total_ascent_m": 88,
+      "cadence_spm": 171,
+      "best_efforts": {
+        "1k": 274.3
+      },
+      "weather": {
+        "temp_c": 15.8,
+        "humidity_pct": 73
+      },
+      "hr_zones": {
+        "zone_1": 15.4,
+        "zone_2": 76.8,
+        "zone_3": 215.0,
+        "zone_4": 307.2,
+        "zone_5": 153.6
+      }
+    },
+    "900000000004": {
+      "activity_id": 900000000004,
+      "date": "2026-03-30",
+      "start_time_local": "2026-03-30T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 6.01,
+      "duration_min": 40.3,
+      "avg_pace_min_per_km": 6.7,
+      "avg_hr": 149,
+      "max_hr": 169,
+      "total_ascent_m": 53,
+      "cadence_spm": 173,
+      "best_efforts": {
+        "1k": 377.9,
+        "3k": 1133.6,
+        "5k": 1889.4
+      },
+      "weather": {
+        "temp_c": 13.5,
+        "humidity_pct": 56
+      },
+      "hr_zones": {
+        "zone_1": 120.9,
+        "zone_2": 846.3,
+        "zone_3": 967.2,
+        "zone_4": 362.7,
+        "zone_5": 120.9
+      }
+    },
+    "900000000005": {
+      "activity_id": 900000000005,
+      "date": "2026-04-03",
+      "start_time_local": "2026-04-03T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 5.01,
+      "duration_min": 29.7,
+      "avg_pace_min_per_km": 5.92,
+      "avg_hr": 132,
+      "max_hr": 153,
+      "total_ascent_m": 26,
+      "cadence_spm": 169,
+      "best_efforts": {
+        "1k": 341.0,
+        "3k": 1023.0,
+        "5k": 1705.0
+      },
+      "weather": {
+        "temp_c": 21.2,
+        "humidity_pct": 42
+      },
+      "hr_zones": {
+        "zone_1": 267.3,
+        "zone_2": 980.1,
+        "zone_3": 445.5,
+        "zone_4": 71.3,
+        "zone_5": 17.8
+      }
+    },
+    "900000000006": {
+      "activity_id": 900000000006,
+      "date": "2026-04-04",
+      "start_time_local": "2026-04-04T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 4.64,
+      "duration_min": 28.2,
+      "avg_pace_min_per_km": 6.08,
+      "avg_hr": 135,
+      "max_hr": 154,
+      "total_ascent_m": 26,
+      "cadence_spm": 169,
+      "best_efforts": {
+        "1k": 350.2,
+        "3k": 1050.6
+      },
+      "weather": {
+        "temp_c": 15.8,
+        "humidity_pct": 52
+      },
+      "hr_zones": {
+        "zone_1": 253.8,
+        "zone_2": 930.6,
+        "zone_3": 423.0,
+        "zone_4": 67.7,
+        "zone_5": 16.9
+      }
+    },
+    "900000000007": {
+      "activity_id": 900000000007,
+      "date": "2026-04-05",
+      "start_time_local": "2026-04-05T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 3.02,
+      "duration_min": 15.4,
+      "avg_pace_min_per_km": 5.1,
+      "avg_hr": 172,
+      "max_hr": 191,
+      "total_ascent_m": 10,
+      "cadence_spm": 166,
+      "best_efforts": {
+        "1k": 275.4,
+        "3k": 826.2
+      },
+      "weather": {
+        "temp_c": 18.3,
+        "humidity_pct": 91
+      },
+      "hr_zones": {
+        "zone_1": 18.5,
+        "zone_2": 92.4,
+        "zone_3": 258.7,
+        "zone_4": 369.6,
+        "zone_5": 184.8
+      }
+    },
+    "900000000008": {
+      "activity_id": 900000000008,
+      "date": "2026-04-07",
+      "start_time_local": "2026-04-07T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 7.21,
+      "duration_min": 45.1,
+      "avg_pace_min_per_km": 6.25,
+      "avg_hr": 145,
+      "max_hr": 164,
+      "total_ascent_m": 37,
+      "cadence_spm": 162,
+      "best_efforts": {
+        "1k": 352.5,
+        "3k": 1057.5,
+        "5k": 1762.5
+      },
+      "weather": {
+        "temp_c": 10.5,
+        "humidity_pct": 65
+      },
+      "hr_zones": {
+        "zone_1": 135.3,
+        "zone_2": 947.1,
+        "zone_3": 1082.4,
+        "zone_4": 405.9,
+        "zone_5": 135.3
+      }
+    },
+    "900000000009": {
+      "activity_id": 900000000009,
+      "date": "2026-04-11",
+      "start_time_local": "2026-04-11T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 4.08,
+      "duration_min": 24.6,
+      "avg_pace_min_per_km": 6.04,
+      "avg_hr": 135,
+      "max_hr": 154,
+      "total_ascent_m": 8,
+      "cadence_spm": 170,
+      "best_efforts": {
+        "1k": 347.9,
+        "3k": 1043.7
+      },
+      "weather": {
+        "temp_c": 10.5,
+        "humidity_pct": 48
+      },
+      "hr_zones": {
+        "zone_1": 221.4,
+        "zone_2": 811.8,
+        "zone_3": 369.0,
+        "zone_4": 59.0,
+        "zone_5": 14.8
+      }
+    },
+    "900000000010": {
+      "activity_id": 900000000010,
+      "date": "2026-04-12",
+      "start_time_local": "2026-04-12T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 4.68,
+      "duration_min": 27.1,
+      "avg_pace_min_per_km": 5.79,
+      "avg_hr": 147,
+      "max_hr": 163,
+      "total_ascent_m": 127,
+      "cadence_spm": 168,
+      "best_efforts": {
+        "1k": 333.5,
+        "3k": 1000.5
+      },
+      "weather": {
+        "temp_c": 11.1,
+        "humidity_pct": 69
+      },
+      "hr_zones": {
+        "zone_1": 243.9,
+        "zone_2": 894.3,
+        "zone_3": 406.5,
+        "zone_4": 65.0,
+        "zone_5": 16.3
+      }
+    },
+    "900000000011": {
+      "activity_id": 900000000011,
+      "date": "2026-04-13",
+      "start_time_local": "2026-04-13T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 3.59,
+      "duration_min": 17.7,
+      "avg_pace_min_per_km": 4.93,
+      "avg_hr": 161,
+      "max_hr": 183,
+      "total_ascent_m": 98,
+      "cadence_spm": 166,
+      "best_efforts": {
+        "1k": 266.2,
+        "3k": 798.7
+      },
+      "weather": {
+        "temp_c": 11.4,
+        "humidity_pct": 39
+      },
+      "hr_zones": {
+        "zone_1": 21.2,
+        "zone_2": 106.2,
+        "zone_3": 297.4,
+        "zone_4": 424.8,
+        "zone_5": 212.4
+      }
+    },
+    "900000000012": {
+      "activity_id": 900000000012,
+      "date": "2026-04-14",
+      "start_time_local": "2026-04-14T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 5.7,
+      "duration_min": 35.9,
+      "avg_pace_min_per_km": 6.3,
+      "avg_hr": 142,
+      "max_hr": 159,
+      "total_ascent_m": 75,
+      "cadence_spm": 177,
+      "best_efforts": {
+        "1k": 355.3,
+        "3k": 1066.0,
+        "5k": 1776.6
+      },
+      "weather": {
+        "temp_c": 27.9,
+        "humidity_pct": 40
+      },
+      "hr_zones": {
+        "zone_1": 107.7,
+        "zone_2": 753.9,
+        "zone_3": 861.6,
+        "zone_4": 323.1,
+        "zone_5": 107.7
+      }
+    },
+    "900000000013": {
+      "activity_id": 900000000013,
+      "date": "2026-04-15",
+      "start_time_local": "2026-04-15T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 4.95,
+      "duration_min": 28.9,
+      "avg_pace_min_per_km": 5.83,
+      "avg_hr": 137,
+      "max_hr": 157,
+      "total_ascent_m": 43,
+      "cadence_spm": 176,
+      "best_efforts": {
+        "1k": 335.8,
+        "3k": 1007.4
+      },
+      "weather": {
+        "temp_c": 16.1,
+        "humidity_pct": 46
+      },
+      "hr_zones": {
+        "zone_1": 260.1,
+        "zone_2": 953.7,
+        "zone_3": 433.5,
+        "zone_4": 69.4,
+        "zone_5": 17.3
+      }
+    },
+    "900000000014": {
+      "activity_id": 900000000014,
+      "date": "2026-04-16",
+      "start_time_local": "2026-04-16T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 4.59,
+      "duration_min": 27.2,
+      "avg_pace_min_per_km": 5.93,
+      "avg_hr": 139,
+      "max_hr": 160,
+      "total_ascent_m": 54,
+      "cadence_spm": 167,
+      "best_efforts": {
+        "1k": 341.6,
+        "3k": 1024.7
+      },
+      "weather": {
+        "temp_c": 26.4,
+        "humidity_pct": 38
+      },
+      "hr_zones": {
+        "zone_1": 244.8,
+        "zone_2": 897.6,
+        "zone_3": 408.0,
+        "zone_4": 65.3,
+        "zone_5": 16.3
+      }
+    },
+    "900000000015": {
+      "activity_id": 900000000015,
+      "date": "2026-04-18",
+      "start_time_local": "2026-04-18T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 3.29,
+      "duration_min": 17.0,
+      "avg_pace_min_per_km": 5.18,
+      "avg_hr": 161,
+      "max_hr": 175,
+      "total_ascent_m": 76,
+      "cadence_spm": 172,
+      "best_efforts": {
+        "1k": 279.7,
+        "3k": 839.2
+      },
+      "weather": {
+        "temp_c": 15.4,
+        "humidity_pct": 25
+      },
+      "hr_zones": {
+        "zone_1": 20.4,
+        "zone_2": 102.0,
+        "zone_3": 285.6,
+        "zone_4": 408.0,
+        "zone_5": 204.0
+      }
+    },
+    "900000000016": {
+      "activity_id": 900000000016,
+      "date": "2026-04-19",
+      "start_time_local": "2026-04-19T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 6.8,
+      "duration_min": 43.7,
+      "avg_pace_min_per_km": 6.43,
+      "avg_hr": 144,
+      "max_hr": 164,
+      "total_ascent_m": 59,
+      "cadence_spm": 173,
+      "best_efforts": {
+        "1k": 362.7,
+        "3k": 1088.0,
+        "5k": 1813.3
+      },
+      "weather": {
+        "temp_c": 23.8,
+        "humidity_pct": 59
+      },
+      "hr_zones": {
+        "zone_1": 131.1,
+        "zone_2": 917.7,
+        "zone_3": 1048.8,
+        "zone_4": 393.3,
+        "zone_5": 131.1
+      }
+    },
+    "900000000017": {
+      "activity_id": 900000000017,
+      "date": "2026-04-22",
+      "start_time_local": "2026-04-22T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 6.33,
+      "duration_min": 36.6,
+      "avg_pace_min_per_km": 5.78,
+      "avg_hr": 143,
+      "max_hr": 162,
+      "total_ascent_m": 93,
+      "cadence_spm": 178,
+      "best_efforts": {
+        "1k": 332.9,
+        "3k": 998.8,
+        "5k": 1664.6
+      },
+      "weather": {
+        "temp_c": 31.6,
+        "humidity_pct": 61
+      },
+      "hr_zones": {
+        "zone_1": 329.4,
+        "zone_2": 1207.8,
+        "zone_3": 549.0,
+        "zone_4": 87.8,
+        "zone_5": 22.0
+      }
+    },
+    "900000000018": {
+      "activity_id": 900000000018,
+      "date": "2026-04-24",
+      "start_time_local": "2026-04-24T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 4.25,
+      "duration_min": 23.3,
+      "avg_pace_min_per_km": 5.49,
+      "avg_hr": 136,
+      "max_hr": 147,
+      "total_ascent_m": 16,
+      "cadence_spm": 169,
+      "best_efforts": {
+        "1k": 316.2,
+        "3k": 948.7
+      },
+      "weather": {
+        "temp_c": 25.2,
+        "humidity_pct": 47
+      },
+      "hr_zones": {
+        "zone_1": 209.7,
+        "zone_2": 768.9,
+        "zone_3": 349.5,
+        "zone_4": 55.9,
+        "zone_5": 14.0
+      }
+    },
+    "900000000019": {
+      "activity_id": 900000000019,
+      "date": "2026-04-27",
+      "start_time_local": "2026-04-27T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 4.46,
+      "duration_min": 22.6,
+      "avg_pace_min_per_km": 5.07,
+      "avg_hr": 166,
+      "max_hr": 184,
+      "total_ascent_m": 71,
+      "cadence_spm": 172,
+      "best_efforts": {
+        "1k": 273.8,
+        "3k": 821.3
+      },
+      "weather": {
+        "temp_c": 15.4,
+        "humidity_pct": 65
+      },
+      "hr_zones": {
+        "zone_1": 27.1,
+        "zone_2": 135.6,
+        "zone_3": 379.7,
+        "zone_4": 542.4,
+        "zone_5": 271.2
+      }
+    },
+    "900000000020": {
+      "activity_id": 900000000020,
+      "date": "2026-04-28",
+      "start_time_local": "2026-04-28T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 9.87,
+      "duration_min": 60.7,
+      "avg_pace_min_per_km": 6.15,
+      "avg_hr": 152,
+      "max_hr": 168,
+      "total_ascent_m": 35,
+      "cadence_spm": 164,
+      "best_efforts": {
+        "1k": 346.9,
+        "3k": 1040.6,
+        "5k": 1734.3
+      },
+      "weather": {
+        "temp_c": 11.7,
+        "humidity_pct": 74
+      },
+      "hr_zones": {
+        "zone_1": 182.1,
+        "zone_2": 1274.7,
+        "zone_3": 1456.8,
+        "zone_4": 546.3,
+        "zone_5": 182.1
+      }
+    },
+    "900000000021": {
+      "activity_id": 900000000021,
+      "date": "2026-05-02",
+      "start_time_local": "2026-05-02T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 5.34,
+      "duration_min": 31.1,
+      "avg_pace_min_per_km": 5.82,
+      "avg_hr": 136,
+      "max_hr": 155,
+      "total_ascent_m": 35,
+      "cadence_spm": 169,
+      "best_efforts": {
+        "1k": 335.2,
+        "3k": 1005.7,
+        "5k": 1676.2
+      },
+      "weather": {
+        "temp_c": 18.1,
+        "humidity_pct": 64
+      },
+      "hr_zones": {
+        "zone_1": 279.9,
+        "zone_2": 1026.3,
+        "zone_3": 466.5,
+        "zone_4": 74.6,
+        "zone_5": 18.7
+      }
+    },
+    "900000000022": {
+      "activity_id": 900000000022,
+      "date": "2026-05-03",
+      "start_time_local": "2026-05-03T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 7.48,
+      "duration_min": 43.5,
+      "avg_pace_min_per_km": 5.82,
+      "avg_hr": 145,
+      "max_hr": 165,
+      "total_ascent_m": 49,
+      "cadence_spm": 167,
+      "best_efforts": {
+        "1k": 335.2,
+        "3k": 1005.7,
+        "5k": 1676.2
+      },
+      "weather": {
+        "temp_c": 5.3,
+        "humidity_pct": 73
+      },
+      "hr_zones": {
+        "zone_1": 391.5,
+        "zone_2": 1435.5,
+        "zone_3": 652.5,
+        "zone_4": 104.4,
+        "zone_5": 26.1
+      }
+    },
+    "900000000023": {
+      "activity_id": 900000000023,
+      "date": "2026-05-04",
+      "start_time_local": "2026-05-04T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 4.79,
+      "duration_min": 23.9,
+      "avg_pace_min_per_km": 4.99,
+      "avg_hr": 160,
+      "max_hr": 183,
+      "total_ascent_m": 17,
+      "cadence_spm": 173,
+      "best_efforts": {
+        "1k": 269.5,
+        "3k": 808.4
+      },
+      "weather": {
+        "temp_c": 21.0,
+        "humidity_pct": 22
+      },
+      "hr_zones": {
+        "zone_1": 28.7,
+        "zone_2": 143.4,
+        "zone_3": 401.5,
+        "zone_4": 573.6,
+        "zone_5": 286.8
+      }
+    },
+    "900000000024": {
+      "activity_id": 900000000024,
+      "date": "2026-05-05",
+      "start_time_local": "2026-05-05T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 7.2,
+      "duration_min": 43.6,
+      "avg_pace_min_per_km": 6.05,
+      "avg_hr": 161,
+      "max_hr": 187,
+      "total_ascent_m": 46,
+      "cadence_spm": 169,
+      "best_efforts": {
+        "1k": 341.2,
+        "3k": 1023.7,
+        "5k": 1706.1
+      },
+      "weather": {
+        "temp_c": 10.6,
+        "humidity_pct": 47
+      },
+      "hr_zones": {
+        "zone_1": 130.8,
+        "zone_2": 915.6,
+        "zone_3": 1046.4,
+        "zone_4": 392.4,
+        "zone_5": 130.8
+      }
+    },
+    "900000000025": {
+      "activity_id": 900000000025,
+      "date": "2026-05-09",
+      "start_time_local": "2026-05-09T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 6.83,
+      "duration_min": 40.5,
+      "avg_pace_min_per_km": 5.93,
+      "avg_hr": 136,
+      "max_hr": 152,
+      "total_ascent_m": 8,
+      "cadence_spm": 167,
+      "best_efforts": {
+        "1k": 341.6,
+        "3k": 1024.7,
+        "5k": 1707.8
+      },
+      "weather": {
+        "temp_c": 17.1,
+        "humidity_pct": 32
+      },
+      "hr_zones": {
+        "zone_1": 364.5,
+        "zone_2": 1336.5,
+        "zone_3": 607.5,
+        "zone_4": 97.2,
+        "zone_5": 24.3
+      }
+    },
+    "900000000026": {
+      "activity_id": 900000000026,
+      "date": "2026-05-10",
+      "start_time_local": "2026-05-10T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 6.89,
+      "duration_min": 39.8,
+      "avg_pace_min_per_km": 5.77,
+      "avg_hr": 149,
+      "max_hr": 160,
+      "total_ascent_m": 49,
+      "cadence_spm": 172,
+      "best_efforts": {
+        "1k": 332.4,
+        "3k": 997.1,
+        "5k": 1661.8
+      },
+      "weather": {
+        "temp_c": 17.3,
+        "humidity_pct": 70
+      },
+      "hr_zones": {
+        "zone_1": 358.2,
+        "zone_2": 1313.4,
+        "zone_3": 597.0,
+        "zone_4": 95.5,
+        "zone_5": 23.9
+      }
+    },
+    "900000000027": {
+      "activity_id": 900000000027,
+      "date": "2026-05-11",
+      "start_time_local": "2026-05-11T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 4.25,
+      "duration_min": 21.7,
+      "avg_pace_min_per_km": 5.1,
+      "avg_hr": 171,
+      "max_hr": 188,
+      "total_ascent_m": 23,
+      "cadence_spm": 175,
+      "best_efforts": {
+        "1k": 275.4,
+        "3k": 826.2
+      },
+      "weather": {
+        "temp_c": 4.2,
+        "humidity_pct": 62
+      },
+      "hr_zones": {
+        "zone_1": 26.0,
+        "zone_2": 130.2,
+        "zone_3": 364.6,
+        "zone_4": 520.8,
+        "zone_5": 260.4
+      }
+    },
+    "900000000028": {
+      "activity_id": 900000000028,
+      "date": "2026-05-12",
+      "start_time_local": "2026-05-12T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 8.02,
+      "duration_min": 51.1,
+      "avg_pace_min_per_km": 6.37,
+      "avg_hr": 154,
+      "max_hr": 179,
+      "total_ascent_m": 107,
+      "cadence_spm": 169,
+      "best_efforts": {
+        "1k": 359.3,
+        "3k": 1077.8,
+        "5k": 1796.3
+      },
+      "weather": {
+        "temp_c": 16.2,
+        "humidity_pct": 39
+      },
+      "hr_zones": {
+        "zone_1": 153.3,
+        "zone_2": 1073.1,
+        "zone_3": 1226.4,
+        "zone_4": 459.9,
+        "zone_5": 153.3
+      }
+    },
+    "900000000029": {
+      "activity_id": 900000000029,
+      "date": "2026-05-13",
+      "start_time_local": "2026-05-13T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 4.76,
+      "duration_min": 27.8,
+      "avg_pace_min_per_km": 5.85,
+      "avg_hr": 140,
+      "max_hr": 160,
+      "total_ascent_m": 0,
+      "cadence_spm": 163,
+      "best_efforts": {
+        "1k": 337.0,
+        "3k": 1010.9
+      },
+      "weather": {
+        "temp_c": 21.5,
+        "humidity_pct": 44
+      },
+      "hr_zones": {
+        "zone_1": 250.2,
+        "zone_2": 917.4,
+        "zone_3": 417.0,
+        "zone_4": 66.7,
+        "zone_5": 16.7
+      }
+    },
+    "900000000030": {
+      "activity_id": 900000000030,
+      "date": "2026-05-14",
+      "start_time_local": "2026-05-14T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 7.62,
+      "duration_min": 42.4,
+      "avg_pace_min_per_km": 5.57,
+      "avg_hr": 141,
+      "max_hr": 155,
+      "total_ascent_m": 0,
+      "cadence_spm": 179,
+      "best_efforts": {
+        "1k": 320.8,
+        "3k": 962.5,
+        "5k": 1604.2
+      },
+      "weather": {
+        "temp_c": 7.9,
+        "humidity_pct": 54
+      },
+      "hr_zones": {
+        "zone_1": 381.6,
+        "zone_2": 1399.2,
+        "zone_3": 636.0,
+        "zone_4": 101.8,
+        "zone_5": 25.4
+      }
+    },
+    "900000000031": {
+      "activity_id": 900000000031,
+      "date": "2026-05-15",
+      "start_time_local": "2026-05-15T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 5.1,
+      "duration_min": 23.9,
+      "avg_pace_min_per_km": 4.69,
+      "avg_hr": 175,
+      "max_hr": 194,
+      "total_ascent_m": 119,
+      "cadence_spm": 171,
+      "best_efforts": {
+        "1k": 253.3,
+        "3k": 759.8,
+        "5k": 1266.3
+      },
+      "weather": {
+        "temp_c": 13.6,
+        "humidity_pct": 76
+      },
+      "hr_zones": {
+        "zone_1": 28.7,
+        "zone_2": 143.4,
+        "zone_3": 401.5,
+        "zone_4": 573.6,
+        "zone_5": 286.8
+      }
+    },
+    "900000000032": {
+      "activity_id": 900000000032,
+      "date": "2026-05-18",
+      "start_time_local": "2026-05-18T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 8.08,
+      "duration_min": 49.8,
+      "avg_pace_min_per_km": 6.16,
+      "avg_hr": 139,
+      "max_hr": 158,
+      "total_ascent_m": 49,
+      "cadence_spm": 171,
+      "best_efforts": {
+        "1k": 347.4,
+        "3k": 1042.3,
+        "5k": 1737.1
+      },
+      "weather": {
+        "temp_c": 17.7,
+        "humidity_pct": 59
+      },
+      "hr_zones": {
+        "zone_1": 149.4,
+        "zone_2": 1045.8,
+        "zone_3": 1195.2,
+        "zone_4": 448.2,
+        "zone_5": 149.4
+      }
+    },
+    "900000000033": {
+      "activity_id": 900000000033,
+      "date": "2026-05-20",
+      "start_time_local": "2026-05-20T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 6.98,
+      "duration_min": 38.9,
+      "avg_pace_min_per_km": 5.58,
+      "avg_hr": 138,
+      "max_hr": 161,
+      "total_ascent_m": 14,
+      "cadence_spm": 174,
+      "best_efforts": {
+        "1k": 321.4,
+        "3k": 964.2,
+        "5k": 1607.0
+      },
+      "weather": {
+        "temp_c": 8.0,
+        "humidity_pct": 68
+      },
+      "hr_zones": {
+        "zone_1": 350.1,
+        "zone_2": 1283.7,
+        "zone_3": 583.5,
+        "zone_4": 93.4,
+        "zone_5": 23.3
+      }
+    },
+    "900000000034": {
+      "activity_id": 900000000034,
+      "date": "2026-05-21",
+      "start_time_local": "2026-05-21T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 6.74,
+      "duration_min": 39.2,
+      "avg_pace_min_per_km": 5.81,
+      "avg_hr": 135,
+      "max_hr": 152,
+      "total_ascent_m": 0,
+      "cadence_spm": 166,
+      "best_efforts": {
+        "1k": 334.7,
+        "3k": 1004.0,
+        "5k": 1673.3
+      },
+      "weather": {
+        "temp_c": 8.2,
+        "humidity_pct": 58
+      },
+      "hr_zones": {
+        "zone_1": 352.8,
+        "zone_2": 1293.6,
+        "zone_3": 588.0,
+        "zone_4": 94.1,
+        "zone_5": 23.5
+      }
+    },
+    "900000000035": {
+      "activity_id": 900000000035,
+      "date": "2026-05-25",
+      "start_time_local": "2026-05-25T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 6.08,
+      "duration_min": 29.7,
+      "avg_pace_min_per_km": 4.88,
+      "avg_hr": 188,
+      "max_hr": 197,
+      "total_ascent_m": 38,
+      "cadence_spm": 172,
+      "best_efforts": {
+        "1k": 263.5,
+        "3k": 790.6,
+        "5k": 1317.6
+      },
+      "weather": {
+        "temp_c": 14.6,
+        "humidity_pct": 50
+      },
+      "hr_zones": {
+        "zone_1": 35.6,
+        "zone_2": 178.2,
+        "zone_3": 499.0,
+        "zone_4": 712.8,
+        "zone_5": 356.4
+      }
+    },
+    "900000000036": {
+      "activity_id": 900000000036,
+      "date": "2026-05-26",
+      "start_time_local": "2026-05-26T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 10.95,
+      "duration_min": 66.2,
+      "avg_pace_min_per_km": 6.05,
+      "avg_hr": 154,
+      "max_hr": 175,
+      "total_ascent_m": 30,
+      "cadence_spm": 167,
+      "best_efforts": {
+        "1k": 341.2,
+        "3k": 1023.7,
+        "5k": 1706.1,
+        "10k": 3412.2
+      },
+      "weather": {
+        "temp_c": 10.7,
+        "humidity_pct": 36
+      },
+      "hr_zones": {
+        "zone_1": 198.6,
+        "zone_2": 1390.2,
+        "zone_3": 1588.8,
+        "zone_4": 595.8,
+        "zone_5": 198.6
+      }
+    },
+    "900000000037": {
+      "activity_id": 900000000037,
+      "date": "2026-05-28",
+      "start_time_local": "2026-05-28T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 7.67,
+      "duration_min": 44.5,
+      "avg_pace_min_per_km": 5.8,
+      "avg_hr": 143,
+      "max_hr": 157,
+      "total_ascent_m": 11,
+      "cadence_spm": 166,
+      "best_efforts": {
+        "1k": 334.1,
+        "3k": 1002.2,
+        "5k": 1670.4
+      },
+      "weather": {
+        "temp_c": 20.6,
+        "humidity_pct": 30
+      },
+      "hr_zones": {
+        "zone_1": 400.5,
+        "zone_2": 1468.5,
+        "zone_3": 667.5,
+        "zone_4": 106.8,
+        "zone_5": 26.7
+      }
+    },
+    "900000000038": {
+      "activity_id": 900000000038,
+      "date": "2026-05-29",
+      "start_time_local": "2026-05-29T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 7.91,
+      "duration_min": 45.3,
+      "avg_pace_min_per_km": 5.73,
+      "avg_hr": 130,
+      "max_hr": 152,
+      "total_ascent_m": 0,
+      "cadence_spm": 175,
+      "best_efforts": {
+        "1k": 330.0,
+        "3k": 990.1,
+        "5k": 1650.2
+      },
+      "weather": {
+        "temp_c": 23.0,
+        "humidity_pct": 35
+      },
+      "hr_zones": {
+        "zone_1": 407.7,
+        "zone_2": 1494.9,
+        "zone_3": 679.5,
+        "zone_4": 108.7,
+        "zone_5": 27.2
+      }
+    },
+    "900000000039": {
+      "activity_id": 900000000039,
+      "date": "2026-05-30",
+      "start_time_local": "2026-05-30T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 6.75,
+      "duration_min": 32.9,
+      "avg_pace_min_per_km": 4.87,
+      "avg_hr": 171,
+      "max_hr": 190,
+      "total_ascent_m": 56,
+      "cadence_spm": 172,
+      "best_efforts": {
+        "1k": 263.0,
+        "3k": 788.9,
+        "5k": 1314.9
+      },
+      "weather": {
+        "temp_c": 14.2,
+        "humidity_pct": 37
+      },
+      "hr_zones": {
+        "zone_1": 39.5,
+        "zone_2": 197.4,
+        "zone_3": 552.7,
+        "zone_4": 789.6,
+        "zone_5": 394.8
+      }
+    },
+    "900000000040": {
+      "activity_id": 900000000040,
+      "date": "2026-05-31",
+      "start_time_local": "2026-05-31T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 10.97,
+      "duration_min": 66.0,
+      "avg_pace_min_per_km": 6.02,
+      "avg_hr": 145,
+      "max_hr": 162,
+      "total_ascent_m": 0,
+      "cadence_spm": 171,
+      "best_efforts": {
+        "1k": 339.5,
+        "3k": 1018.6,
+        "5k": 1697.6,
+        "10k": 3395.3
+      },
+      "weather": {
+        "temp_c": 16.9,
+        "humidity_pct": 60
+      },
+      "hr_zones": {
+        "zone_1": 198.0,
+        "zone_2": 1386.0,
+        "zone_3": 1584.0,
+        "zone_4": 594.0,
+        "zone_5": 198.0
+      }
+    },
+    "900000000041": {
+      "activity_id": 900000000041,
+      "date": "2026-06-05",
+      "start_time_local": "2026-06-05T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 7.49,
+      "duration_min": 44.4,
+      "avg_pace_min_per_km": 5.93,
+      "avg_hr": 135,
+      "max_hr": 152,
+      "total_ascent_m": 66,
+      "cadence_spm": 166,
+      "best_efforts": {
+        "1k": 341.6,
+        "3k": 1024.7,
+        "5k": 1707.8
+      },
+      "weather": {
+        "temp_c": 2.7,
+        "humidity_pct": 25
+      },
+      "hr_zones": {
+        "zone_1": 399.6,
+        "zone_2": 1465.2,
+        "zone_3": 666.0,
+        "zone_4": 106.6,
+        "zone_5": 26.6
+      }
+    },
+    "900000000042": {
+      "activity_id": 900000000042,
+      "date": "2026-06-07",
+      "start_time_local": "2026-06-07T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 8.64,
+      "duration_min": 50.0,
+      "avg_pace_min_per_km": 5.79,
+      "avg_hr": 137,
+      "max_hr": 150,
+      "total_ascent_m": 83,
+      "cadence_spm": 169,
+      "best_efforts": {
+        "1k": 333.5,
+        "3k": 1000.5,
+        "5k": 1667.5
+      },
+      "weather": {
+        "temp_c": 22.2,
+        "humidity_pct": 22
+      },
+      "hr_zones": {
+        "zone_1": 450.0,
+        "zone_2": 1650.0,
+        "zone_3": 750.0,
+        "zone_4": 120.0,
+        "zone_5": 30.0
+      }
+    },
+    "900000000043": {
+      "activity_id": 900000000043,
+      "date": "2026-06-08",
+      "start_time_local": "2026-06-08T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 7.51,
+      "duration_min": 34.6,
+      "avg_pace_min_per_km": 4.61,
+      "avg_hr": 167,
+      "max_hr": 182,
+      "total_ascent_m": 23,
+      "cadence_spm": 165,
+      "best_efforts": {
+        "1k": 248.9,
+        "3k": 746.8,
+        "5k": 1244.7
+      },
+      "weather": {
+        "temp_c": 7.4,
+        "humidity_pct": 20
+      },
+      "hr_zones": {
+        "zone_1": 41.5,
+        "zone_2": 207.6,
+        "zone_3": 581.3,
+        "zone_4": 830.4,
+        "zone_5": 415.2
+      }
+    },
+    "900000000044": {
+      "activity_id": 900000000044,
+      "date": "2026-06-09",
+      "start_time_local": "2026-06-09T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 10.99,
+      "duration_min": 65.6,
+      "avg_pace_min_per_km": 5.97,
+      "avg_hr": 143,
+      "max_hr": 167,
+      "total_ascent_m": 41,
+      "cadence_spm": 170,
+      "best_efforts": {
+        "1k": 336.7,
+        "3k": 1010.1,
+        "5k": 1683.5,
+        "10k": 3367.1
+      },
+      "weather": {
+        "temp_c": 9.8,
+        "humidity_pct": 82
+      },
+      "hr_zones": {
+        "zone_1": 196.8,
+        "zone_2": 1377.6,
+        "zone_3": 1574.4,
+        "zone_4": 590.4,
+        "zone_5": 196.8
+      }
+    },
+    "900000000045": {
+      "activity_id": 900000000045,
+      "date": "2026-06-12",
+      "start_time_local": "2026-06-12T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 9.07,
+      "duration_min": 53.2,
+      "avg_pace_min_per_km": 5.86,
+      "avg_hr": 142,
+      "max_hr": 165,
+      "total_ascent_m": 18,
+      "cadence_spm": 166,
+      "best_efforts": {
+        "1k": 337.5,
+        "3k": 1012.6,
+        "5k": 1687.7
+      },
+      "weather": {
+        "temp_c": 15.6,
+        "humidity_pct": 36
+      },
+      "hr_zones": {
+        "zone_1": 478.8,
+        "zone_2": 1755.6,
+        "zone_3": 798.0,
+        "zone_4": 127.7,
+        "zone_5": 31.9
+      }
+    },
+    "900000000046": {
+      "activity_id": 900000000046,
+      "date": "2026-06-14",
+      "start_time_local": "2026-06-14T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 8.63,
+      "duration_min": 47.6,
+      "avg_pace_min_per_km": 5.52,
+      "avg_hr": 143,
+      "max_hr": 157,
+      "total_ascent_m": 69,
+      "cadence_spm": 168,
+      "best_efforts": {
+        "1k": 318.0,
+        "3k": 953.9,
+        "5k": 1589.8
+      },
+      "weather": {
+        "temp_c": 21.9,
+        "humidity_pct": 59
+      },
+      "hr_zones": {
+        "zone_1": 428.4,
+        "zone_2": 1570.8,
+        "zone_3": 714.0,
+        "zone_4": 114.2,
+        "zone_5": 28.6
+      }
+    },
+    "900000000047": {
+      "activity_id": 900000000047,
+      "date": "2026-06-15",
+      "start_time_local": "2026-06-15T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 6.54,
+      "duration_min": 32.2,
+      "avg_pace_min_per_km": 4.92,
+      "avg_hr": 164,
+      "max_hr": 190,
+      "total_ascent_m": 45,
+      "cadence_spm": 180,
+      "best_efforts": {
+        "1k": 265.7,
+        "3k": 797.0,
+        "5k": 1328.4
+      },
+      "weather": {
+        "temp_c": 8.9,
+        "humidity_pct": 81
+      },
+      "hr_zones": {
+        "zone_1": 38.6,
+        "zone_2": 193.2,
+        "zone_3": 541.0,
+        "zone_4": 772.8,
+        "zone_5": 386.4
+      }
+    },
+    "900000000048": {
+      "activity_id": 900000000048,
+      "date": "2026-06-16",
+      "start_time_local": "2026-06-16T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 12.46,
+      "duration_min": 77.6,
+      "avg_pace_min_per_km": 6.23,
+      "avg_hr": 150,
+      "max_hr": 172,
+      "total_ascent_m": 32,
+      "cadence_spm": 167,
+      "best_efforts": {
+        "1k": 351.4,
+        "3k": 1054.1,
+        "5k": 1756.9,
+        "10k": 3513.7
+      },
+      "weather": {
+        "temp_c": 9.2,
+        "humidity_pct": 28
+      },
+      "hr_zones": {
+        "zone_1": 232.8,
+        "zone_2": 1629.6,
+        "zone_3": 1862.4,
+        "zone_4": 698.4,
+        "zone_5": 232.8
+      }
+    },
+    "900000000049": {
+      "activity_id": 900000000049,
+      "date": "2026-06-18",
+      "start_time_local": "2026-06-18T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 9.76,
+      "duration_min": 53.6,
+      "avg_pace_min_per_km": 5.49,
+      "avg_hr": 137,
+      "max_hr": 159,
+      "total_ascent_m": 53,
+      "cadence_spm": 175,
+      "best_efforts": {
+        "1k": 316.2,
+        "3k": 948.7,
+        "5k": 1581.1
+      },
+      "weather": {
+        "temp_c": 19.6,
+        "humidity_pct": 68
+      },
+      "hr_zones": {
+        "zone_1": 482.4,
+        "zone_2": 1768.8,
+        "zone_3": 804.0,
+        "zone_4": 128.6,
+        "zone_5": 32.2
+      }
+    },
+    "900000000050": {
+      "activity_id": 900000000050,
+      "date": "2026-06-19",
+      "start_time_local": "2026-06-19T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 7.22,
+      "duration_min": 40.1,
+      "avg_pace_min_per_km": 5.55,
+      "avg_hr": 143,
+      "max_hr": 153,
+      "total_ascent_m": 67,
+      "cadence_spm": 167,
+      "best_efforts": {
+        "1k": 319.7,
+        "3k": 959.0,
+        "5k": 1598.4
+      },
+      "weather": {
+        "temp_c": 14.2,
+        "humidity_pct": 65
+      },
+      "hr_zones": {
+        "zone_1": 360.9,
+        "zone_2": 1323.3,
+        "zone_3": 601.5,
+        "zone_4": 96.2,
+        "zone_5": 24.1
+      }
+    },
+    "900000000051": {
+      "activity_id": 900000000051,
+      "date": "2026-06-21",
+      "start_time_local": "2026-06-21T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 6.86,
+      "duration_min": 32.1,
+      "avg_pace_min_per_km": 4.68,
+      "avg_hr": 169,
+      "max_hr": 186,
+      "total_ascent_m": 43,
+      "cadence_spm": 171,
+      "best_efforts": {
+        "1k": 252.7,
+        "3k": 758.2,
+        "5k": 1263.6
+      },
+      "weather": {
+        "temp_c": 24.4,
+        "humidity_pct": 46
+      },
+      "hr_zones": {
+        "zone_1": 38.5,
+        "zone_2": 192.6,
+        "zone_3": 539.3,
+        "zone_4": 770.4,
+        "zone_5": 385.2
+      }
+    },
+    "900000000052": {
+      "activity_id": 900000000052,
+      "date": "2026-06-23",
+      "start_time_local": "2026-06-23T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 12.36,
+      "duration_min": 74.2,
+      "avg_pace_min_per_km": 6.0,
+      "avg_hr": 153,
+      "max_hr": 169,
+      "total_ascent_m": 77,
+      "cadence_spm": 170,
+      "best_efforts": {
+        "1k": 338.4,
+        "3k": 1015.2,
+        "5k": 1692.0,
+        "10k": 3384.0
+      },
+      "weather": {
+        "temp_c": 5.9,
+        "humidity_pct": 52
+      },
+      "hr_zones": {
+        "zone_1": 222.6,
+        "zone_2": 1558.2,
+        "zone_3": 1780.8,
+        "zone_4": 667.8,
+        "zone_5": 222.6
+      }
+    },
+    "900000000053": {
+      "activity_id": 900000000053,
+      "date": "2026-06-25",
+      "start_time_local": "2026-06-25T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 10.34,
+      "duration_min": 58.8,
+      "avg_pace_min_per_km": 5.69,
+      "avg_hr": 139,
+      "max_hr": 159,
+      "total_ascent_m": 45,
+      "cadence_spm": 170,
+      "best_efforts": {
+        "1k": 327.7,
+        "3k": 983.2,
+        "5k": 1638.7,
+        "10k": 3277.4
+      },
+      "weather": {
+        "temp_c": 26.7,
+        "humidity_pct": 38
+      },
+      "hr_zones": {
+        "zone_1": 529.2,
+        "zone_2": 1940.4,
+        "zone_3": 882.0,
+        "zone_4": 141.1,
+        "zone_5": 35.3
+      }
+    },
+    "900000000054": {
+      "activity_id": 900000000054,
+      "date": "2026-06-26",
+      "start_time_local": "2026-06-26T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 9.27,
+      "duration_min": 53.4,
+      "avg_pace_min_per_km": 5.76,
+      "avg_hr": 147,
+      "max_hr": 169,
+      "total_ascent_m": 36,
+      "cadence_spm": 174,
+      "best_efforts": {
+        "1k": 331.8,
+        "3k": 995.3,
+        "5k": 1658.9
+      },
+      "weather": {
+        "temp_c": -0.8,
+        "humidity_pct": 36
+      },
+      "hr_zones": {
+        "zone_1": 480.6,
+        "zone_2": 1762.2,
+        "zone_3": 801.0,
+        "zone_4": 128.2,
+        "zone_5": 32.0
+      }
+    },
+    "900000000055": {
+      "activity_id": 900000000055,
+      "date": "2026-06-27",
+      "start_time_local": "2026-06-27T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 6.9,
+      "duration_min": 33.1,
+      "avg_pace_min_per_km": 4.79,
+      "avg_hr": 169,
+      "max_hr": 185,
+      "total_ascent_m": 56,
+      "cadence_spm": 180,
+      "best_efforts": {
+        "1k": 258.7,
+        "3k": 776.0,
+        "5k": 1293.3
+      },
+      "weather": {
+        "temp_c": 16.5,
+        "humidity_pct": 49
+      },
+      "hr_zones": {
+        "zone_1": 39.7,
+        "zone_2": 198.6,
+        "zone_3": 556.1,
+        "zone_4": 794.4,
+        "zone_5": 397.2
+      }
+    },
+    "900000000056": {
+      "activity_id": 900000000056,
+      "date": "2026-06-28",
+      "start_time_local": "2026-06-28T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 13.58,
+      "duration_min": 84.2,
+      "avg_pace_min_per_km": 6.2,
+      "avg_hr": 163,
+      "max_hr": 180,
+      "total_ascent_m": 56,
+      "cadence_spm": 162,
+      "best_efforts": {
+        "1k": 349.7,
+        "3k": 1049.0,
+        "5k": 1748.4,
+        "10k": 3496.8
+      },
+      "weather": {
+        "temp_c": 23.0,
+        "humidity_pct": 59
+      },
+      "hr_zones": {
+        "zone_1": 252.6,
+        "zone_2": 1768.2,
+        "zone_3": 2020.8,
+        "zone_4": 757.8,
+        "zone_5": 252.6
+      }
+    },
+    "900000000057": {
+      "activity_id": 900000000057,
+      "date": "2026-07-02",
+      "start_time_local": "2026-07-02T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 9.75,
+      "duration_min": 55.3,
+      "avg_pace_min_per_km": 5.67,
+      "avg_hr": 138,
+      "max_hr": 161,
+      "total_ascent_m": 43,
+      "cadence_spm": 165,
+      "best_efforts": {
+        "1k": 326.6,
+        "3k": 979.8,
+        "5k": 1633.0
+      },
+      "weather": {
+        "temp_c": 26.5,
+        "humidity_pct": 81
+      },
+      "hr_zones": {
+        "zone_1": 497.7,
+        "zone_2": 1824.9,
+        "zone_3": 829.5,
+        "zone_4": 132.7,
+        "zone_5": 33.2
+      }
+    },
+    "900000000058": {
+      "activity_id": 900000000058,
+      "date": "2026-07-03",
+      "start_time_local": "2026-07-03T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 8.51,
+      "duration_min": 46.5,
+      "avg_pace_min_per_km": 5.47,
+      "avg_hr": 133,
+      "max_hr": 160,
+      "total_ascent_m": 47,
+      "cadence_spm": 172,
+      "best_efforts": {
+        "1k": 315.1,
+        "3k": 945.2,
+        "5k": 1575.4
+      },
+      "weather": {
+        "temp_c": 12.2,
+        "humidity_pct": 51
+      },
+      "hr_zones": {
+        "zone_1": 418.5,
+        "zone_2": 1534.5,
+        "zone_3": 697.5,
+        "zone_4": 111.6,
+        "zone_5": 27.9
+      }
+    },
+    "900000000059": {
+      "activity_id": 900000000059,
+      "date": "2026-07-04",
+      "start_time_local": "2026-07-04T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 7.28,
+      "duration_min": 33.2,
+      "avg_pace_min_per_km": 4.56,
+      "avg_hr": 178,
+      "max_hr": 196,
+      "total_ascent_m": 47,
+      "cadence_spm": 167,
+      "best_efforts": {
+        "1k": 246.2,
+        "3k": 738.7,
+        "5k": 1231.2
+      },
+      "weather": {
+        "temp_c": 19.2,
+        "humidity_pct": 57
+      },
+      "hr_zones": {
+        "zone_1": 39.8,
+        "zone_2": 199.2,
+        "zone_3": 557.8,
+        "zone_4": 796.8,
+        "zone_5": 398.4
+      }
+    },
+    "900000000060": {
+      "activity_id": 900000000060,
+      "date": "2026-07-07",
+      "start_time_local": "2026-07-07T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 14.08,
+      "duration_min": 83.5,
+      "avg_pace_min_per_km": 5.93,
+      "avg_hr": 145,
+      "max_hr": 163,
+      "total_ascent_m": 10,
+      "cadence_spm": 168,
+      "best_efforts": {
+        "1k": 334.5,
+        "3k": 1003.4,
+        "5k": 1672.3,
+        "10k": 3344.5
+      },
+      "weather": {
+        "temp_c": 9.4,
+        "humidity_pct": 43
+      },
+      "hr_zones": {
+        "zone_1": 250.5,
+        "zone_2": 1753.5,
+        "zone_3": 2004.0,
+        "zone_4": 751.5,
+        "zone_5": 250.5
+      }
+    },
+    "900000000061": {
+      "activity_id": 900000000061,
+      "date": "2026-07-08",
+      "start_time_local": "2026-07-08T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 9.83,
+      "duration_min": 55.7,
+      "avg_pace_min_per_km": 5.67,
+      "avg_hr": 131,
+      "max_hr": 145,
+      "total_ascent_m": 30,
+      "cadence_spm": 170,
+      "best_efforts": {
+        "1k": 326.6,
+        "3k": 979.8,
+        "5k": 1633.0
+      },
+      "weather": {
+        "temp_c": 20.7,
+        "humidity_pct": 43
+      },
+      "hr_zones": {
+        "zone_1": 501.3,
+        "zone_2": 1838.1,
+        "zone_3": 835.5,
+        "zone_4": 133.7,
+        "zone_5": 33.4
+      }
+    },
+    "900000000062": {
+      "activity_id": 900000000062,
+      "date": "2026-07-10",
+      "start_time_local": "2026-07-10T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 9.58,
+      "duration_min": 56.7,
+      "avg_pace_min_per_km": 5.92,
+      "avg_hr": 136,
+      "max_hr": 157,
+      "total_ascent_m": 24,
+      "cadence_spm": 175,
+      "best_efforts": {
+        "1k": 341.0,
+        "3k": 1023.0,
+        "5k": 1705.0
+      },
+      "weather": {
+        "temp_c": 10.1,
+        "humidity_pct": 53
+      },
+      "hr_zones": {
+        "zone_1": 510.3,
+        "zone_2": 1871.1,
+        "zone_3": 850.5,
+        "zone_4": 136.1,
+        "zone_5": 34.0
+      }
+    },
+    "900000000063": {
+      "activity_id": 900000000063,
+      "date": "2026-07-11",
+      "start_time_local": "2026-07-11T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 7.45,
+      "duration_min": 33.3,
+      "avg_pace_min_per_km": 4.47,
+      "avg_hr": 170,
+      "max_hr": 185,
+      "total_ascent_m": 69,
+      "cadence_spm": 180,
+      "best_efforts": {
+        "1k": 241.4,
+        "3k": 724.1,
+        "5k": 1206.9
+      },
+      "weather": {
+        "temp_c": 24.4,
+        "humidity_pct": 49
+      },
+      "hr_zones": {
+        "zone_1": 40.0,
+        "zone_2": 199.8,
+        "zone_3": 559.4,
+        "zone_4": 799.2,
+        "zone_5": 399.6
+      }
+    },
+    "900000000064": {
+      "activity_id": 900000000064,
+      "date": "2026-07-13",
+      "start_time_local": "2026-07-13T06:30:00",
+      "name": "Running",
+      "activity_type": "running",
+      "distance_km": 13.11,
+      "duration_min": 80.5,
+      "avg_pace_min_per_km": 6.14,
+      "avg_hr": 152,
+      "max_hr": 172,
+      "total_ascent_m": 72,
+      "cadence_spm": 174,
+      "best_efforts": {
+        "1k": 346.3,
+        "3k": 1038.9,
+        "5k": 1731.5,
+        "10k": 3463.0
+      },
+      "weather": {
+        "temp_c": 10.8,
+        "humidity_pct": 59
+      },
+      "hr_zones": {
+        "zone_1": 241.5,
+        "zone_2": 1690.5,
+        "zone_3": 1932.0,
+        "zone_4": 724.5,
+        "zone_5": 241.5
+      }
+    }
+  },
+  "meta": {
+    "schema_version": 1,
+    "last_sync": "2026-07-15T06:05:00-04:00",
+    "note": "Synthetic sample data for the public demo \u2014 not a real athlete."
+  }
+}
