@@ -248,8 +248,11 @@ def generate_og_image():
 # Build everything
 # --------------------------------------------------------------------------
 
-def main():
-    generate_og_image()
+def build_page_data():
+    """Loads the sample dataset and builds every chart/table/stat used by
+    both the web demo (render_html) and the PDF slide deck
+    (build_slide_deck.py) -- the single source of truth for "what does the
+    demo show", so the two outputs can't drift apart."""
     raw = json.loads(SAMPLE_DATA_FILE.read_text())
     daily, acts = load_frames(raw)
     acts["run_type"] = infer_run_type(acts, DEMO_LONG_RUN_FACTOR, DEMO_TEMPO_PERCENTILE)
@@ -491,12 +494,18 @@ def main():
     </div>
     """
 
-    html = render_html(
-        charts=charts, chips=chips, race_clock_html=race_clock_html,
-        personal_records=personal_records, predictor_rows=predictor_rows,
-        this_week_be=this_week_be, all_time_be=all_time_be, board=board,
-        recent_runs=recent_runs,
-    )
+    return {
+        "charts": charts, "chips": chips, "race_clock_html": race_clock_html,
+        "personal_records": personal_records, "predictor_rows": predictor_rows,
+        "this_week_be": this_week_be, "all_time_be": all_time_be, "board": board,
+        "recent_runs": recent_runs,
+    }
+
+
+def main():
+    generate_og_image()
+    data = build_page_data()
+    html = render_html(**data)
     OUT_FILE.write_text(html, encoding="utf-8")
     print(f"Wrote {OUT_FILE}")
 

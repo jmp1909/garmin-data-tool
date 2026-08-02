@@ -1,6 +1,7 @@
 .env
 .garmin_tokens/
 data/*.json
+docs/slide_deck.html
 __pycache__/
 *.pyc
 .venv/
