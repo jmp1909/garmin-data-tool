@@ -1,5 +1,7 @@
 # Garmin Running Dashboard
 
+**[Live demo →](https://jmp1909.github.io/garmin-data-tool/)** (sample data, not a real athlete's activity)
+
 A personal, local dashboard that pulls your running data from Garmin Connect
 and turns it into actual training analysis — not just a re-skin of what
 Garmin Connect already shows you. It computes fitness/fatigue/form, injury-risk
