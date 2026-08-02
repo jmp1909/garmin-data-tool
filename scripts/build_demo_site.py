@@ -24,10 +24,12 @@ sys.path.insert(0, str(BASE_DIR))  # so `import analytics` resolves regardless o
 
 import altair as alt
 import pandas as pd
+from PIL import Image, ImageDraw, ImageFont
 
 import analytics as A
 
 SAMPLE_DATA_FILE = BASE_DIR / "docs" / "sample_data" / "garmin_history.json"
+OG_IMAGE_FILE = BASE_DIR / "docs" / "og-image.png"
 OUT_FILE = BASE_DIR / "docs" / "index.html"
 
 DEMO_RACE_DATE = date(2026, 10, 25)
@@ -218,11 +220,36 @@ def crosshair_chart(long_df, y_title=None, colors=None, zero_line=False):
     return alt.layer(*layers).properties(height=280, width=CHART_WIDTH)
 
 
+def generate_og_image():
+    """A simple branded 1200x630 PNG (standard OG/Twitter card size) for
+    LinkedIn/social link previews -- no chart data, just title/subtitle, so
+    it never needs to change when the sample data does."""
+    W, H = 1200, 630
+    img = Image.new("RGB", (W, H), GROUND)
+    draw = ImageDraw.Draw(img)
+
+    def font(size, bold=False):
+        try:
+            name = "segoeuib.ttf" if bold else "segoeui.ttf"
+            return ImageFont.truetype(name, size)
+        except OSError:
+            return ImageFont.load_default(size=size)
+
+    draw.rectangle([0, 0, 14, H], fill=ACCENT)
+    draw.text((70, 210), "Running Dashboard", font=font(64, bold=True), fill=INK)
+    draw.text((70, 300), "Fitness, fatigue, and race prediction —", font=font(30), fill=INK_2)
+    draw.text((70, 344), "computed from your own training data.", font=font(30), fill=INK_2)
+    draw.text((70, 420), "LIVE DEMO · SAMPLE DATA", font=font(22, bold=True), fill=ACCENT)
+
+    img.save(OG_IMAGE_FILE)
+
+
 # --------------------------------------------------------------------------
 # Build everything
 # --------------------------------------------------------------------------
 
 def main():
+    generate_og_image()
     raw = json.loads(SAMPLE_DATA_FILE.read_text())
     daily, acts = load_frames(raw)
     acts["run_type"] = infer_run_type(acts, DEMO_LONG_RUN_FACTOR, DEMO_TEMPO_PERCENTILE)
