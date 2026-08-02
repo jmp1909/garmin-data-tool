@@ -322,18 +322,19 @@ def crosshair_chart(long_df, y_title=None, colors=None, zero_line=False):
     tooltip = [alt.Tooltip(field="actual_date", type="temporal", title="Date")] + [
         alt.Tooltip(field=s, type="quantitative", title=s, format=".2f") for s in series
     ]
-    # Visible crosshair line -- thin, purely cosmetic, doesn't own the
-    # pointer-event binding (a hairline rule has almost no horizontal hit
-    # area, which is what made hover only register on exact pixels before).
+    # Visible crosshair line -- thin, purely cosmetic. No tooltip encoding
+    # here: tooltips only fire on the mark that actually receives the
+    # pointer event, and that's the fat layer below, not this one.
     rule_visible = hover_base.mark_rule(color=RULE_STRONG).encode(
-        x="date:T", opacity=alt.condition(nearest, alt.value(0.5), alt.value(0)), tooltip=tooltip
+        x="date:T", opacity=alt.condition(nearest, alt.value(0.5), alt.value(0))
     )
     # Fat invisible rule, full chart height by default (no y/y2 given), one
-    # per dense-grid day -- this is what actually captures the pointer, with
-    # enough width to bridge the gap to its neighbors regardless of how many
-    # points are packed into the chart. Placed last so it's on top and gets
-    # first claim on hover, rather than sitting under the thin visible rule.
-    selectors = hover_base.mark_rule(opacity=0, strokeWidth=24).encode(x="date:T").add_params(nearest)
+    # per dense-grid day -- this both captures the pointer (enough width to
+    # bridge the gap to its neighbors regardless of point density) AND owns
+    # the tooltip, since a mark with no tooltip encoding falls back to
+    # showing only its one encoded channel (date) instead of nothing.
+    # Placed last so it's on top and gets first claim on hover.
+    selectors = hover_base.mark_rule(opacity=0, strokeWidth=24).encode(x="date:T", tooltip=tooltip).add_params(nearest)
 
     layers += [line, points, rule_visible, selectors]
     return alt.layer(*layers).properties(height=280)
