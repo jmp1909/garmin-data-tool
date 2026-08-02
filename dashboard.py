@@ -283,17 +283,27 @@ def crosshair_chart(long_df, y_title=None, colors=None, zero_line=False):
     date/Series/value. Returns None if there's no data to show.
 
     The tooltip is built from a date-pivoted (wide) copy of the data so a
-    single hover shows every series' value at that date together, not just
-    whichever one row happens to be nearest."""
+    single hover shows every series' value at that date together. Hover
+    capture is built from a *dense daily grid* snapped to the nearest real
+    reading via merge_asof, not the sparse actual dates directly -- some
+    metrics (VO2max, efficiency factor) only have a handful of readings
+    spread across weeks, and invisible marks placed only at those exact
+    dates leave dead zones everywhere in between. The grid captures hover
+    anywhere; the tooltip still shows the real reading's own date."""
     if long_df is None or long_df.empty:
         return None
     series = sorted(long_df["Series"].unique().tolist())
     palette = colors or CATEGORICAL
 
-    pivot_df = long_df.pivot_table(index="date", columns="Series", values="value", aggfunc="first").reset_index()
+    pivot_df = long_df.pivot_table(index="date", columns="Series", values="value", aggfunc="first").reset_index().sort_values("date")
+
+    dense_dates = pd.DataFrame({"date": pd.date_range(pivot_df["date"].min(), pivot_df["date"].max(), freq="D")})
+    hover_source = pivot_df.assign(actual_date=pivot_df["date"])
+    hover_df = pd.merge_asof(dense_dates, hover_source, on="date", direction="nearest")
+    hover_long = hover_df.melt(id_vars=["date", "actual_date"], value_vars=series, var_name="Series", value_name="value").dropna(subset=["value"])
 
     base = alt.Chart(long_df)
-    pivot_base = alt.Chart(pivot_df)
+    hover_base = alt.Chart(hover_df)
     nearest = alt.selection_point(nearest=True, on="pointerover", fields=["date"], empty=False)
 
     color_enc = alt.Color("Series:N", title=None, scale=alt.Scale(domain=series, range=palette[:len(series)])) \
@@ -304,13 +314,16 @@ def crosshair_chart(long_df, y_title=None, colors=None, zero_line=False):
         layers.append(alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(color=RULE_STRONG, strokeDash=[3, 3]).encode(y="y:Q"))
 
     line = base.mark_line(point=False).encode(x=alt.X("date:T", title=None), y=alt.Y("value:Q", title=y_title), color=color_enc)
-    selectors = pivot_base.mark_point(opacity=0).encode(x="date:T").add_params(nearest)
-    points = line.mark_point(size=45).encode(opacity=alt.condition(nearest, alt.value(1), alt.value(0)))
+    selectors = hover_base.mark_point(opacity=0, size=800).encode(x="date:T").add_params(nearest)
+    points = alt.Chart(hover_long).mark_point(size=45).encode(
+        x="date:T", y=alt.Y("value:Q"), color=color_enc,
+        opacity=alt.condition(nearest, alt.value(1), alt.value(0)),
+    )
 
-    tooltip = [alt.Tooltip(field="date", type="temporal", title="Date")] + [
+    tooltip = [alt.Tooltip(field="actual_date", type="temporal", title="Date")] + [
         alt.Tooltip(field=s, type="quantitative", title=s, format=".2f") for s in series
     ]
-    rule = pivot_base.mark_rule(color=RULE_STRONG).encode(
+    rule = hover_base.mark_rule(color=RULE_STRONG).encode(
         x="date:T", opacity=alt.condition(nearest, alt.value(0.5), alt.value(0)), tooltip=tooltip
     ).add_params(nearest)
 
